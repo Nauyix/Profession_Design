@@ -1,0 +1,45 @@
+create user 'ProDes@localhost' identified by 'Pwd@502';
+--如果提示no databse selected，输入use mysql
+create table pd_user(
+    user_id varchar(10),
+    user_name varchar(10),
+    user_pwd varchar(20),
+    user_tel varchar(11),
+    user_email varchar(20),
+    user_type int
+);
+create table pd_house(
+    house_id varchar(10),
+    house_prov varchar(10),
+    house_city varchar(10),
+    house_dist varchar(10),
+    house_adds varchar(20),
+    house_area double,
+    house_price double,
+    house_type varchar(5),
+    house_age int,
+    sell_type varchar(20),
+    house_status varchar(20)
+);
+create table pd_contract(
+    con_id varchar(10),
+    house_id varchar(10),
+    mid_id varchar(10),
+    seller_id varchar(10),
+    buyer_id varchar(10),
+    house_price double,
+    house_pm varchar(20),
+    loan_quota double,
+    loan_type varchar(20),
+    house_prov varchar(10),
+    house_city varchar(10),
+    house_dist varchar(10),
+    house_adds varchar(20)
+);
+create table pd_inform(
+    inform_id varchar(10),
+    sender_id varchar(10),
+    receiver_id  varchar(10),
+    inform_text  varchar(30),
+    inform_time datetime
+);
