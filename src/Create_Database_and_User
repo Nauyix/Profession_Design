@@ -1,5 +1,5 @@
 use mysql;
-create user 'ProDes@localhost' identified by 'Pwd@502';
+create user 'ProDes' identified by 'Pwd@502';
 create table pd_user(
     user_id varchar(10),
     user_name varchar(10),

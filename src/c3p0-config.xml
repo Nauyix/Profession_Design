@@ -1,8 +1,8 @@
 <c3p0-config>
     <default-config>
-        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
         <property name="jdbcUrl">
-            jdbc:mysql://localhost:3306/jdbc
+            jdbc:mysql://localhost:3306/mysql
         </property>
         <property name="user">ProDes</property>
         <property name="password">Pwd@502</property>
@@ -12,15 +12,6 @@
         <property name="maxPoolSize">100</property>
         <property name="minPoolSize">10</property>
         <property name="maxStatements">200</property>
+        <property name="idleConnectionTestPeriod" value="1800" />
     </default-config>
-    <named-config name="itcast">
-        <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">
-            jdbc:mysql://localhost:3306/jdbc
-        </property>
-        <property name="user">ProDes</property>
-        <property name="password">Pwd@502</property>
-        <property name="initialPoolSize">5</property>
-        <property name="maxPoolSize">15</property>
-    </named-config>
 </c3p0-config>
