@@ -22,9 +22,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="c3p0-0.9.1.2" level="project" />
+    <orderEntry type="library" exported="" name="c3p0-0.9.1.2" level="project" />
     <orderEntry type="library" name="c3p0-0.9.1.21" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.69" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.69" level="application_server_libraries" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="application" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

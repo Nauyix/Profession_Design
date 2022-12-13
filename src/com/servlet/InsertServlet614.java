@@ -2,7 +2,7 @@ package com.servlet;
 
 import com.bean.House510;
 import com.dao.HouseDao510;
-import com.sun.jndi.toolkit.ctx.HeadTail;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
