@@ -35,7 +35,7 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <form action="" method="post">
         账号:<input type="text" name="id"/>
         <br>
-        密码:<input type="password"name="password"/>
+        密码:<input type="password" name="password"/>
         <br>
 
         <input type="submit" value="login"/>
