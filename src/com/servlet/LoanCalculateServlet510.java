@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.lang.*;
 import java.util.*;
@@ -32,8 +33,8 @@ public class LoanCalculateServlet510 extends HttpServlet {
         double ll=1;
         if(type.equals("business")) ll=0.049;
         else if(type.equals("provident")) ll=0.0325;
-        req.setAttribute("price",price);
-        req.setAttribute("time",year);
+        req.getSession().setAttribute("price",String.valueOf(price));
+        req.getSession().setAttribute("time",String.valueOf(year));
         if(proj.equals("capital")){//等额本金
             double month_price=price/year;
             for(int i=1;i<=year;i++)
@@ -53,8 +54,14 @@ public class LoanCalculateServlet510 extends HttpServlet {
         else{//something went wrong?
             resp.sendRedirect("Wrong510.jsp");
         }
-        req.setAttribute("interest",l);
-        resp.sendRedirect("loan_viewresult510.jsp");
+        //outputStream ot=resp.getOutputStream();
+        //ot.write("qwqwqwqwq".getBytes());
+        System.out.println("Servlet正在运行"+year+" "+price);
+        req.getSession().setAttribute("interest",l);
+        String url = "loan_viewresult510.jsp";
+        req.getRequestDispatcher(url).forward(req,resp);
+
+
     }
 }
 /*

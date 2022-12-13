@@ -20,7 +20,6 @@ public class UserLoginServlet614 extends HttpServlet {
         String userName = request.getParameter("user_name");
         String userPwd = request.getParameter("user_pwd");
 
-
         //调用业务层
         User510 user = null;
         try {
