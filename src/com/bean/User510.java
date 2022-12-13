@@ -49,11 +49,11 @@ public class User510 {
         this.user_type = user_type;
     }
 
-    String user_name;
-    String user_id;
-    String user_pwd;
-    String user_tel;
-    String user_email;
-    int user_type;
+    private String user_name;
+    private String user_id;
+    private String user_pwd;
+    private String user_tel;
+    private String user_email;
+    private int user_type;
 
 }

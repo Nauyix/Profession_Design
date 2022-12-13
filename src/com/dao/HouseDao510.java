@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.bean.User510;
+import com.bean.House510;
 import com.utils.C3p0Utils510;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -8,39 +8,38 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
 import java.util.List;
-//unfinished
 public class HouseDao510 {
-    public List<User510> findAll() throws SQLException {
+    public List<House510> findAll() throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="select * from User510";
-        List<User510> list=(List<User510>)runner.query(sql,new BeanListHandler<User510>(User510.class));
+        String sql="select * from pd_house";
+        List<House510> list=(List<House510>)runner.query(sql,new BeanListHandler<House510>(House510.class));
         return list;
     }
-    public User510 find(int id) throws SQLException {
+    public House510 find(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql = "select * from User510 where id=?";
-        User510 User510 = (User510) runner.query(sql,new BeanHandler<User510>(User510.class),new Object[]{id});
-        return User510;
+        String sql = "select * from pd_house where id=?";
+        House510 h = (House510) runner.query(sql,new BeanHandler<House510>(House510.class),new Object[]{id});
+        return h;
     }
-    public Boolean insert(User510 u) throws SQLException{
+    public Boolean insert(House510 h) throws SQLException{
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="insert into User510(user_id,user_name,user_pwd,user_tel,user_email,user_type) values (?,?,?,?,?,?)";
-        int num=runner.update(sql,new Object[] {u.getUser_id(),u.getUser_name(),u.getUser_pwd(),u.getUser_tel(),u.getUser_email(),u.getUser_type()});
+        String sql="insert into House510 values (?,?,?,?,?,?,?,?,?,?,?)";
+        int num=runner.update(sql,new Object[] {h.getHouse_id(),h.getHouse_prov(),h.getHouse_city(),h.getHouse_dist(),h.getHouse_adds(),h.getHouse_area(),h.getHouse_price(),h.getHouse_type(),h.getHouse_age(),h.getSell_type(),h.getHouse_status()});
         if (num > 0) {
             return true;
         }
         return false;
     }
-    public Boolean update(User510 u) throws SQLException {
+    public Boolean update(House510 h) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="update User510 set user_name=?,user_pwd=?,user_tel=?,user_email=?,user_type=? where id=?";
-        int num= runner.update(sql,new Object[]{u.getUser_name(),u.getUser_pwd(),u.getUser_tel(),u.getUser_email(),u.getUser_type(),u.getUser_id()});
+        String sql="update House510 set House_prov=?,House_city=?,House_dist=?,House_adds=?,House_area=?,House_price=?,House_type=?,House_age=?,Sell_type=?,House_status() where house_id=?";
+        int num= runner.update(sql,new Object[]{h.getHouse_prov(),h.getHouse_city(),h.getHouse_dist(),h.getHouse_adds(),h.getHouse_area(),h.getHouse_price(),h.getHouse_type(),h.getHouse_age(),h.getSell_type(),h.getHouse_status(),h.getHouse_id()});
         if(num>0) return true;
         return false;
     }
     public Boolean delete(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="delete from User510 where id=?";
+        String sql="delete from House510 where house_id=?";
         int num= runner.update(sql,id);
         if (num > 0) {
             return true;

@@ -92,13 +92,13 @@ public class House510 {
         this.house_status = house_status;
     }
 
-    String house_city;
-    String house_dist;
-    String house_adds;
-    double house_area;
-    double house_price;
-    String house_type;
-    int house_age;
-    String sell_type;
-    String house_status;
+    private String house_city;
+    private String house_dist;
+    private String house_adds;
+    private double house_area;
+    private double house_price;
+    private  String house_type;
+    private int house_age;
+    private String sell_type;
+    private String house_status;
 }
