@@ -33,7 +33,7 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%--注册框 --%>
 <div id="a">
   <h1>注册账号</h1>
-  <form action="registersuccess.jsp"  method="post">
+  <form action=""  method="post">
     用户名:
     <input type="text"
            name="id">
