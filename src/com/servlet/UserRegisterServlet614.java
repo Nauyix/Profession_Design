@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/register")
+@WebServlet("/register614")
 public class UserRegisterServlet614 {
     public class UserRegisterServlet extends HttpServlet {
 
@@ -23,10 +23,10 @@ public class UserRegisterServlet614 {
             try {
                 if(userService.register(user)){
                     request.setAttribute("msg","注册成功，请登录！");
-                    request.getRequestDispatcher("/login.jsp").forward(request,response);
+                    request.getRequestDispatcher("/login614.jsp").forward(request,response);
                 }else{
                     request.setAttribute("msg","用户名存在，请重新注册");
-                    request.getRequestDispatcher("/register.jsp").forward(request,response);
+                    request.getRequestDispatcher("/register614.jsp").forward(request,response);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);

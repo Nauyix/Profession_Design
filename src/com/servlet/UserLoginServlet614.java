@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/login")
+@WebServlet("/login614")
 public class UserLoginServlet614 extends HttpServlet {
     private UserService614 userService614 = new UserService614();
     @Override
@@ -30,10 +30,10 @@ public class UserLoginServlet614 extends HttpServlet {
         }
         if(user  == null){
             request.setAttribute("**","用户名或密码错误，请重新登录！");
-            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/login614.jsp").forward(request,response);
         }else{
             request.getSession().setAttribute("user",user);
-            request.getRequestDispatcher("/**").forward(request,response);
+            request.getRequestDispatcher("/index.do").forward(request,response);
         }
 
 

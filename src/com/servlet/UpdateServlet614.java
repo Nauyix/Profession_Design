@@ -31,6 +31,6 @@ public class UpdateServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect("主页面");
+        response.sendRedirect("/index");
     }
 }

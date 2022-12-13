@@ -39,7 +39,7 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <br>
 
         <input type="submit" value="login"/>
-        没有账号？<a href ="register.jsp">注册账号</a>
+        没有账号？<a href ="register614.jsp">注册账号</a>
     </form>
 </div>
 </body>

@@ -10,6 +10,6 @@
     </context-param>
     <context-param>
         <param-name>view-suffix</param-name>
-        <param-value>.html</param-value>
+        <param-value>.jsp</param-value>
     </context-param>
 </web-app>
