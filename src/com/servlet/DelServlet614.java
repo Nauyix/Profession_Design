@@ -23,7 +23,7 @@ public class DelServlet614 extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            response.sendRedirect("/index614");
+            response.sendRedirect("");
 
         }
     }

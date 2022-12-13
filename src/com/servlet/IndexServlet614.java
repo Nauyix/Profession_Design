@@ -16,14 +16,11 @@ import java.util.List;
 public class IndexServlet614 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer pageNo = 1;
-        String pageNoStr = request.getParameter("pageNo");
-        if (StringUtil614.isNotEmpty(pageNoStr)) {
-            pageNo = Integer.parseInt(pageNoStr);
-        }
-        HttpSession session = request.getSession();
-        session.setAttribute("pageNo", pageNo);
+
+
         HouseDao510 houseDao = new HouseDao510();
+        HttpSession session = request.getSession();
+
         List<House510> HouseList = null;
         try {
             HouseList = houseDao.findAll();
@@ -32,7 +29,7 @@ public class IndexServlet614 extends HttpServlet {
         }
 
         session.setAttribute("HouseList", HouseList);
-
+        response.sendRedirect("index.jsp");
 
     }
 }
