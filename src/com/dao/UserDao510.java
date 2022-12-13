@@ -33,14 +33,14 @@ public class UserDao510 {
     }
     public Boolean update(User510 u) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="update pd_user set user_name=?,user_pwd=?,user_tel=?,user_email=?,user_type=? where id=?";
+        String sql="update pd_user set user_name=?,user_pwd=?,user_tel=?,user_email=?,user_type=? where user_id=?";
         int num= runner.update(sql,new Object[]{u.getUser_name(),u.getUser_pwd(),u.getUser_tel(),u.getUser_email(),u.getUser_type(),u.getUser_id()});
         if(num>0) return true;
         return false;
     }
     public Boolean delete(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="delete from pd_user where id=?";
+        String sql="delete from pd_user where user_id=?";
         int num= runner.update(sql,id);
         if (num > 0) {
             return true;

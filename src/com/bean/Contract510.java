@@ -1,7 +1,7 @@
 package com.bean;
 
 public class Contract510 {
-    String con_id,house_id,mid_id,seller_id,buyer_id,house_pm,loan_type;
+    private String con_id,house_id,mid_id,seller_id,buyer_id,house_pm,loan_type;
     double house_price;
 
     public String getCon_id() {
@@ -20,11 +20,11 @@ public class Contract510 {
         this.house_id = house_id;
     }
 
-    public String getMid_id() {
+    public String getmid_id() {
         return mid_id;
     }
 
-    public void setMid_id(String mid_id) {
+    public void setmid_id(String mid_id) {
         this.mid_id = mid_id;
     }
 
@@ -76,5 +76,5 @@ public class Contract510 {
         this.loan_quota = loan_quota;
     }
 
-    double loan_quota;
+    private double loan_quota;
 }

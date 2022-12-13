@@ -92,6 +92,7 @@ public class House510 {
         this.house_status = house_status;
     }
 
+
     String house_city;
     String house_dist;
     String house_adds;
@@ -115,4 +116,7 @@ public class House510 {
         this.sell_type = sell_type;
         this.house_status = house_status;
     }
+
+
+
 }
