@@ -47,4 +47,24 @@ public class UserDao510 {
         }
         else return false;
     }
+
+    public boolean isUsernameExist614(String user_name) throws SQLException {
+        QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
+        String sql = "select * from pd_user where user_name = ?";
+        User510 user = runner.query(sql,new BeanHandler<User510>(User510.class),user_name);
+        if(user == null){
+            return false;
+        }else{
+            return true;
+        }
+
+
+    }
+
+    public User510 login614(String name, String pwd) throws SQLException {
+        QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
+        String sql = "select * from pd_user where user_name = ? and user_pwd = ?";
+        User510 user = runner.query(sql,new BeanHandler<User510>(User510.class),name,pwd);
+        return user;
+    }
 }
