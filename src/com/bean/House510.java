@@ -101,4 +101,18 @@ public class House510 {
     int house_age;
     String sell_type;
     String house_status;
+
+    public House510(String house_id, String house_prov, String house_city, String house_dist, String house_adds, double house_area, double house_price, String house_type, int house_age, String sell_type, String house_status) {
+        this.house_id = house_id;
+        this.house_prov = house_prov;
+        this.house_city = house_city;
+        this.house_dist = house_dist;
+        this.house_adds = house_adds;
+        this.house_area = house_area;
+        this.house_price = house_price;
+        this.house_type = house_type;
+        this.house_age = house_age;
+        this.sell_type = sell_type;
+        this.house_status = house_status;
+    }
 }
