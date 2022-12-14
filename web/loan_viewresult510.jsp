@@ -1,3 +1,5 @@
+<%@ page import="com.bean.User510" %>
+<%@ page import="java.util.List" %>
 <jsp:useBean id="time" scope="request" type=""/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
@@ -25,6 +27,7 @@ margin: 0 auto;
 <%
 String price=request.getSession().getAttribute("price").toString();
 String year=request.getSession().getAttribute("time").toString();
+List<User510> u=(List<User510>) request.getSession().getAttribute("userss");
 %>
 
 </style>
@@ -33,7 +36,6 @@ String year=request.getSession().getAttribute("time").toString();
             <td>您的贷款总额<%out.print(price);%><br></td>
         </tr>
         <tr>
-
             <td>您的贷款共有${time}期<br></td>
         </tr>
     </table>
