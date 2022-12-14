@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("")
+@WebServlet(name="InsertServlet614",value="/InsertServlet614")
 public class InsertServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
     @Override
@@ -35,5 +35,8 @@ public class InsertServlet614 extends HttpServlet {
 
         response.sendRedirect("/index");
 
+    }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
     }
 }

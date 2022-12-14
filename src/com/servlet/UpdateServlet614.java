@@ -33,4 +33,7 @@ public class UpdateServlet614 extends HttpServlet {
 
         response.sendRedirect("/index");
     }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
 }

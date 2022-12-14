@@ -38,4 +38,7 @@ public class UserLoginServlet614 extends HttpServlet {
 
         //给出响应
     }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
 }
