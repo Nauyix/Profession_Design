@@ -28,11 +28,11 @@ public class UserLoginServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
         if(user  == null){
-            request.setAttribute("**","用户名或密码错误，请重新登录！");
+            request.setAttribute("msg","用户名或密码错误，请重新登录！");
             request.getRequestDispatcher("/login614.jsp").forward(request,response);
         }else{
             request.getSession().setAttribute("user",user);
-            request.getRequestDispatcher("/index.do").forward(request,response);
+            request.getRequestDispatcher("userindex.jsp").forward(request,response);
         }
 
 
