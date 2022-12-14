@@ -56,4 +56,11 @@ public class User510 {
     private String user_email;
     private int user_type;
 
+    public User510(String user_name, String user_pwd, String user_tel, String user_email, int user_type) {
+        this.user_name = user_name;
+        this.user_pwd = user_pwd;
+        this.user_tel = user_tel;
+        this.user_email = user_email;
+        this.user_type = user_type;
+    }
 }

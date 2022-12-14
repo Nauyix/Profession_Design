@@ -32,7 +32,7 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <body>
 <div id="a">
     <h1>登录界面</h1>
-    <form action="" method="post">
+    <form action="userindex614.jsp" method="post">
         账号:<input type="text" name="id"/>
         <br>
         密码:<input type="password" name="password"/>

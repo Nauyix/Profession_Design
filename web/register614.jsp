@@ -32,23 +32,27 @@ charset=utf-8"
 <%--注册框 --%>
 <div id="a">
   <h1>注册账号</h1>
-  <form action=""  method="post">
+  <form action="UserAddServlet614"  method="post">
     用户名:
     <input type="text"
-           name="id">
-    <br>
+           name="nickname">
+    <br/>
 
     密码:
     <input type="password"name="password">
-    <br>
+    <br/>
 
     邮箱:
     <input type="text" name="email">
-    <br>
+    <br/>
 
     手机号:
     <input type="text" name="phonenumber">
-    <br>
+    <br/>
+
+    用户类别:<input type="radio" name="usertype" value="0">买家
+            <input type="radio" name="usertype" value="1">卖家
+            <input type="radio" name="usertype" value="2">中介<br/>
 
     <input type="submit" value="注册">
 

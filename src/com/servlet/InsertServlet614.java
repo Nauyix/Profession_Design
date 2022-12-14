@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/addhouse")
+@WebServlet("/houseadd614")
 public class InsertServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
     @Override
@@ -33,7 +33,7 @@ public class InsertServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("houseindex614.jsp");
 
     }
 }
