@@ -34,4 +34,7 @@ public class IndexServlet614 extends HttpServlet {
         response.sendRedirect("index.jsp");
 
     }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 }

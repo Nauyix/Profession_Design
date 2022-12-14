@@ -13,6 +13,7 @@
     <title>贷款计算器</title>
 </head>
 <body>
+
 <style type="text/css">
     .tables{
         align: center;
@@ -66,6 +67,6 @@
     </table>
 </span>
 
-
+<%@include file="pagefooter510.jsp" %>
 </body>
 </html>

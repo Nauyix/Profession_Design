@@ -49,7 +49,7 @@ public class LoanCalculateServlet510 extends HttpServlet {
             }
         }
         else if (proj.equals("interest")) {//等额本息
-            double payback=price*(ll/12)*pow((1+ll/12),year)/(pow((1+ll/12),year-1));
+            double payback=price*(((ll/12)*pow((1+ll/12),year))/(pow((1+ll/12),year)-1));
             for(int i=1;i<=year;i++)
             {
                 l.add(payback);
@@ -58,9 +58,7 @@ public class LoanCalculateServlet510 extends HttpServlet {
         else{//something went wrong?
             resp.sendRedirect("Wrong510.jsp");
         }
-        //outputStream ot=resp.getOutputStream();
-        //ot.write("qwqwqwqwq".getBytes());
-        System.out.println("Servlet正在运行"+year+" "+price);
+        System.out.println("Servlet正在运行"+year+" "+price+" qwq "+l.size());
         req.getSession().setAttribute("interest",l);
         String url = "loan_viewresult510.jsp";
         req.getRequestDispatcher(url).forward(req,resp);
