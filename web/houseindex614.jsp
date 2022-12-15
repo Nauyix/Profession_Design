@@ -34,6 +34,8 @@
     %>
     </style>
 <body>
+<%@include file="pageguide510.jsp" %>
+
     <p>房屋信息</p><a href="houseadd614.jsp" style="border:0px solid blue;margin-bottom:4px;">出售房屋</a>
     <table border="1" width="600" cellpadding="4" cellspacing="0">
       <tr align="center">
@@ -64,6 +66,7 @@
 
       </tr>
     </table>
+          <%@include file="pageguide510.jsp" %>
 
 </body>
 </html>

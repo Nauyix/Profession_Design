@@ -30,6 +30,8 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     </style>
 </head>
 <body>
+<%@include file="pageguide510.jsp" %>
+
 <div id="a">
     <h1>登录界面</h1>
     <form action="userindex614.jsp" method="post">
@@ -42,6 +44,8 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         没有账号？<a href ="register614.jsp">注册账号</a>
     </form>
 </div>
+<%@include file="pageguide510.jsp" %>
+
 </body>
 </html>
 

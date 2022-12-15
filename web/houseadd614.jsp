@@ -12,6 +12,8 @@
 </head>
 
 <body>
+<%@include file="pageguide510.jsp" %>
+
     <p>新增房屋信息</p>
     <form action="InsertServlet614" method="post">
         &nbsp;省&nbsp&nbsp：<input type="text" name="house_prov"><br/>
@@ -32,5 +34,7 @@
         <input type="reset" value="重 置"/>
 
     </form>
+<%@include file="pageguide510.jsp" %>
+
 </body>
 </html>

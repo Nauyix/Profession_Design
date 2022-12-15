@@ -11,6 +11,8 @@
     <title>编辑房屋</title>
 </head>
 <body>
+<%@include file="pageguide510.jsp" %>
+
     <p>编辑房屋信息</p>
     <input type="hidden",name="houseid",value="${houseid}">
     <form action="/update" method="post">
@@ -32,5 +34,7 @@
 
 
 </form>
+<%@include file="pageguide510.jsp" %>
+
 </body>
 </html>

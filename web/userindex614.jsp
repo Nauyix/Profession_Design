@@ -11,6 +11,8 @@
     <title>用户信息</title>
 </head>
 <body>
+<%@include file="pageguide510.jsp" %>
+
 <style type="text/css">
   .tables{
     align: center;
@@ -50,6 +52,7 @@
       <td>usertype</td>
     </tr>
   </table>
+<%@include file="pageguide510.jsp" %>
 
 </body>
 </html>

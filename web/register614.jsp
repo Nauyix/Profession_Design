@@ -29,6 +29,8 @@ charset=utf-8"
   }
 </style>
 <body>
+<%@include file="pageguide510.jsp" %>
+
 <%--注册框 --%>
 <div id="a">
   <h1>注册账号</h1>
@@ -59,6 +61,8 @@ charset=utf-8"
     <input type="submit" value="重置">
   </form>
 </div>
+<%@include file="pageguide510.jsp" %>
+
 </body>
 </html>
 
