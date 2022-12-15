@@ -47,7 +47,12 @@ public class UserDao510 {
         }
         else return false;
     }
-
+    public int getSize() throws SQLException {
+        QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
+        String sql="select * from pd_user";
+        List<User510> list=(List<User510>)runner.query(sql,new BeanListHandler<User510>(User510.class));
+        return list.size();
+    }
     public boolean isUsernameExist614(String user_name) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql = "select * from pd_user where user_name = ?";

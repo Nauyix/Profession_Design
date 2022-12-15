@@ -14,13 +14,13 @@
 <body>
     <p>新增房屋信息</p>
     <form action="InsertServlet614" method="post">
-        &nbsp省&nbsp&nbsp：<input type="text" name="prov"><br/>
-        &nbsp市&nbsp&nbsp：<input type="text" name="city"><br/>
-        &nbsp区&nbsp&nbsp：<input type="text" name="dist"><br/>
-        详细地址：<input type="text" name="adds"><br/>
-        面&nbsp&nbsp积：<input type="text" name="area"><br/>
-        价&nbsp&nbsp格：<input type="text" name="price"><br/>
-        户&nbsp&nbsp型：<input type="text" name="type"><br/>
+        &nbsp;省&nbsp&nbsp：<input type="text" name="house_prov"><br/>
+        &nbsp市&nbsp&nbsp：<input type="text" name="house_city"><br/>
+        &nbsp区&nbsp&nbsp：<input type="text" name="house_dist"><br/>
+        详细地址：<input type="text" name="house_adds"><br/>
+        面&nbsp&nbsp积：<input type="text" name="house_area"><br/>
+        价&nbsp&nbsp格：<input type="text" name="house_price"><br/>
+        户&nbsp&nbsp型：<input type="text" name="house_type"><br/>
         年&nbsp&nbsp限：<input type="text" name="age"><br/>
         类&nbsp&nbsp型：<input type="radio"  name="housetype"  value="sellnew">新房
                        <input type="radio" name="housetype"  value="sellsecond">二手房<br/>

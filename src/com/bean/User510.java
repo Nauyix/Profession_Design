@@ -1,5 +1,7 @@
 package com.bean;
 
+import java.sql.SQLException;
+
 public class User510 {
     public String getUser_name() {
         return user_name;
@@ -40,7 +42,6 @@ public class User510 {
     public void setUser_email(String user_email) {
         this.user_email = user_email;
     }
-
     public int getUser_type() {
         return user_type;
     }

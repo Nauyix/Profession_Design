@@ -16,6 +16,7 @@
     <title>查看结果</title>
 </head>
 <body>
+<%@include file="pageguide510.jsp" %>
 <style type="text/css">
 .tables{
     align: center;
@@ -42,7 +43,6 @@ List<Double> u=(List<Double>) request.getSession().getAttribute("interest");
 
 String now="";
 %>
-
 </style>
     <table border="1" class="tables">
         <tr class="tables_son">
@@ -85,5 +85,6 @@ String now="";
 
             %>
     </table>
+<%@include file="pagefooter510.jsp" %>
 </body>
 </html>

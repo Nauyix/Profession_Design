@@ -11,31 +11,31 @@
     <title>Title</title>
 </head>
 <body>
-#尚未完成
 <style>
   .col{
-
+    color: #212121;
+  }
+  .col2{
+    color: #FFFFFF
   }
 </style>
-<footer style="width: 100%;z-index: 9999;bottom:0;background-color:#2D2D37">
+<footer style="width: 100%;z-index: 9999;bottom:0;background-color:#607D8B">
   <div class="container footer" style="max-width: 1200px;width:100%;height: 100px;">
-    <div class="row" style="padding-top: 30px;">
+    <div class="row" style="padding-top: 0px;">
       <div class="col">
-        <p>123123</p>
+        <p>2022年秋 专业设计</p>
       </div>
       <div class="col">
-        <p>房屋交易管理系统</p>
-        <p style="margin-top:-12px;"><span style="visibility: hidden">客服专线：</span>277257237</p>
+        <p style="margin-top:-15px;">房屋交易管理系统</p>
       </div>
       <div class="col" style="padding-right: 1px;padding-left: 1px;">
-        <p>地址：荣成市学院路2006号</p>
-        <p style="margin-top:-12px;"><span style="visibility: hidden">地址：</span>dfsdfasfdsa</p>
+        <p style="margin-top: -15px">地址：荣成市学院路2006号</p>
       </div>
     </div>
   </div>
-  <div class="text-center" style="background-color: #25252F;height: 30px;line-height: 30px;color: #fff;font-size: 12px;">
-    <p class="mb-0" style="opacity: .4">
-      Copyright ©2020  www.xxxxx.com  ghhfdgh
+  <div class="text-center" style="background-color: #25252F;height: 30px;line-height: 30px;color: #455A64;font-size: 12px;">
+    <p class="col2" style="opacity: .4">
+      Copyright ©2022  房产销售管理系统 刘希源 吕东庭 侯智予
     </p>
   </div>
 </footer>

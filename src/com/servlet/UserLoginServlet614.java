@@ -19,7 +19,7 @@ public class UserLoginServlet614 extends HttpServlet {
         //接受请求
         String userName = request.getParameter("user_name");
         String userPwd = request.getParameter("user_pwd");
-
+        System.out.println("Using LoginServlet");
         //调用业务层
         User510 user = null;
         try {
@@ -34,8 +34,6 @@ public class UserLoginServlet614 extends HttpServlet {
             request.getSession().setAttribute("user",user);
             request.getRequestDispatcher("userindex.jsp").forward(request,response);
         }
-
-
         //给出响应
     }
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

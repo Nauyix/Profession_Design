@@ -13,7 +13,7 @@
     <title>贷款计算器</title>
 </head>
 <body>
-
+<%@include file="pageguide510.jsp" %>
 <style type="text/css">
     .tables{
         align: center;
@@ -66,7 +66,10 @@
         </form>
     </table>
 </span>
-
+<%
+    //application.setAttribute("userlogin","1");
+    //application.setAttribute("username","testname");
+%>
 <%@include file="pagefooter510.jsp" %>
 </body>
 </html>
