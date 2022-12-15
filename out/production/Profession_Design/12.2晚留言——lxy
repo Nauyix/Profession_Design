@@ -1,0 +1,3 @@
+需要在数据库内执行如下语句(使用root账号)：
+grant all on *.* to 'ProDes'@'localhost';
+flush privileges;

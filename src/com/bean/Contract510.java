@@ -77,4 +77,16 @@ public class Contract510 {
     }
 
     private double loan_quota;
+
+    public Contract510(String con_id, String house_id, String mid_id, String seller_id, String buyer_id, double house_price, String house_pm, double loan_quota, String loan_type) {
+        this.con_id = con_id;
+        this.house_id = house_id;
+        this.mid_id = mid_id;
+        this.seller_id = seller_id;
+        this.buyer_id = buyer_id;
+        this.house_pm = house_pm;
+        this.loan_type = loan_type;
+        this.house_price = house_price;
+        this.loan_quota = loan_quota;
+    }
 }

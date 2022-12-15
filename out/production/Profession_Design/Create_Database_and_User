@@ -1,0 +1,51 @@
+use mysql;
+create user 'ProDes' identified by 'Pwd@502';
+create table pd_user(
+    user_id varchar(10),
+    user_name varchar(10),
+    user_pwd varchar(20),
+    user_tel varchar(11),
+    user_email varchar(20),
+    user_type int,
+    primary key(user_id)
+)charset=utf8;
+create table pd_house(
+    house_id varchar(10),
+    house_prov varchar(10),
+    house_city varchar(10),
+    house_dist varchar(10),
+    house_adds varchar(20),
+    house_area double,
+    house_price double,
+    house_type varchar(5),
+    house_age int,
+    sell_type varchar(20),
+    house_status varchar(20),
+    primary key(house_id)
+)charset=utf8;
+create table pd_contract(
+    con_id varchar(10),
+    house_id varchar(10),
+    mid_id varchar(10),
+    seller_id varchar(10),
+    buyer_id varchar(10),
+    house_price double,
+    house_pm varchar(20),
+    loan_quota double,
+    loan_type varchar(20),
+    primary key(con_id)
+)charset=utf8;
+ALTER TABLE pd_contract ADD CONSTRAINT wj1 FOREIGN KEY (house_id) REFERENCES pd_house (house_id);
+ALTER TABLE pd_contract ADD CONSTRAINT wj2 FOREIGN KEY (seller_id) REFERENCES pd_user (user_id);
+ALTER TABLE pd_contract ADD CONSTRAINT wj3 FOREIGN KEY (mid_id) REFERENCES pd_user (user_id);
+ALTER TABLE pd_contract ADD CONSTRAINT wj4 FOREIGN KEY (buyer_id) REFERENCES pd_user (user_id);
+create table pd_inform(
+    inform_id varchar(10),
+    sender_id varchar(10),
+    receiver_id  varchar(10),
+    inform_text  varchar(30),
+    inform_time datetime,
+    primary key(inform_id)
+)charset=utf8;
+ALTER TABLE pd_inform ADD CONSTRAINT wj5 FOREIGN KEY (sender_id) REFERENCES pd_user (user_id);
+ALTER TABLE pd_inform ADD CONSTRAINT wj6 FOREIGN KEY (receiver_id) REFERENCES pd_user (user_id);
