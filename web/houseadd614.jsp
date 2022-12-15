@@ -14,7 +14,7 @@
 <body>
     <p>新增房屋信息</p>
     <form action="InsertServlet614" method="post">
-        &nbsp;省&nbsp&nbsp：<input type="text" name="prov"><br/>
+        &nbsp省&nbsp&nbsp：<input type="text" name="prov"><br/>
         &nbsp市&nbsp&nbsp：<input type="text" name="city"><br/>
         &nbsp区&nbsp&nbsp：<input type="text" name="dist"><br/>
         详细地址：<input type="text" name="adds"><br/>

@@ -1,14 +1,14 @@
 package com.bean;
 
 public class House510 {
-    String house_id;
+    int  house_id;
     String house_prov;
 
-    public String getHouse_id() {
+    public int getHouse_id() {
         return house_id;
     }
 
-    public void setHouse_id(String house_id) {
+    public void setHouse_id(int house_id) {
         this.house_id = house_id;
     }
 
@@ -103,7 +103,7 @@ public class House510 {
     String sell_type;
     String house_status;
 
-    public House510(String house_id, String house_prov, String house_city, String house_dist, String house_adds, double house_area, double house_price, String house_type, int house_age, String sell_type, String house_status) {
+    public House510(int house_id, String house_prov, String house_city, String house_dist, String house_adds, double house_area, double house_price, String house_type, int house_age, String sell_type, String house_status) {
         this.house_id = house_id;
         this.house_prov = house_prov;
         this.house_city = house_city;

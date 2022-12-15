@@ -2,7 +2,6 @@ package com.servlet;
 
 import com.bean.House510;
 import com.dao.HouseDao510;
-import com.utils.StringUtil614;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +13,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/index")
-public class IndexServlet614 extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebServlet("/houseindex")
+public class HouseIndexServlet614 extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
         HouseDao510 houseDao = new HouseDao510();
@@ -31,10 +30,10 @@ public class IndexServlet614 extends HttpServlet {
         }
 
         session.setAttribute("HouseList", HouseList);
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("houseindex.jsp");
 
     }
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
     }
 }

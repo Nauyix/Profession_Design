@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet("/uphouse")
-public class UpdateServlet614 extends HttpServlet {
+@WebServlet("/update")
+public class HouseUpdateServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
 
     @Override
@@ -29,12 +29,12 @@ public class UpdateServlet614 extends HttpServlet {
         int house_age = Integer.parseInt(request.getParameter("house_age"));
 
         try {
-            houseDao.update(new House510("1", "house_prov", "house_city", "house_dist", "house_adds", house_area, house_price, "house_type",house_age,"sell_type","house_status"));
+            houseDao.update(new House510(1, "house_prov", "house_city", "house_dist", "house_adds", house_area, house_price, "house_type",house_age,"sell_type","house_status"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect("/index");
+        response.sendRedirect("/houseindex614");
     }
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);

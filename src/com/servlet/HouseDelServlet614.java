@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/delhouse")
-public class DelServlet614 extends HttpServlet {
+public class HouseDelServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idStr = request.getParameter("id");
         if(StringUtil614.isNotEmpty(idStr)){
             int id = Integer.parseInt(idStr);
@@ -29,7 +29,7 @@ public class DelServlet614 extends HttpServlet {
 
         }
     }
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
     }
 }
