@@ -23,6 +23,9 @@ public class InsertServlet614 extends HttpServlet {
         String house_city = request.getParameter("house_city");
         String house_dist = request.getParameter("house_dist");
         String house_adds = request.getParameter("house_adds");
+        String house_type = request.getParameter("house_type");
+        String sell_type = request.getParameter("sell_type");
+        String house_status = request.getParameter("fitement");
         Double house_area = Double.parseDouble(request.getParameter("house_area"));
         Double house_price = Double.parseDouble(request.getParameter("house_price"));
         Integer house_age = Integer.parseInt(request.getParameter("age"));
