@@ -1,4 +1,5 @@
-<%@ page import="java.util.Enumeration" %><%--
+<%@ page import="java.util.Enumeration" %>
+<%@ page import="com.bean.User510" %><%--
   Created by IntelliJ IDEA.
   User: lvdongting
   Date: 2022/12/14
@@ -23,14 +24,13 @@
 
   }
   <%
-   String id = session.getId();
-   String name = request.getSession().getAttribute("nickname").toString();
-   String pwd = request.getSession().getAttribute("password").toString();
-   String email = request.getSession().getAttribute("email").toString();
-   String phonenumber = request.getSession().getAttribute("phonenumber").toString();
-   int usertype = Integer.parseInt(request.getSession().getAttribute("usertype").toString());
-
-
+  User510 user=(User510) session.getAttribute("user");
+  String id = String.valueOf(user.getUser_id());
+  String name = user.getUser_name();
+  String pwd = user.getUser_pwd();
+  String email = user.getUser_email();
+  String phonenumber = user.getUser_tel();
+  int usertype = user.getUser_type();
   %>
 
 </style>
@@ -44,15 +44,15 @@
       <td>用户类别</td>
     </tr>
     <tr>
-      <td>id</td>
-      <td>name</td>
-      <td>pwd</td>
-      <td>email</td>
-      <td>phonenumber</td>
-      <td>usertype</td>
+      <td><%=id%></td>
+      <td>${name}</td>
+      <td>${pwd}</td>
+      <td>${email}</td>
+      <td>${phonenumber}</td>
+      <td>${usertype}</td>
     </tr>
   </table>
-<%@include file="pageguide510.jsp" %>
+<%@include file="pagefooter510.jsp" %>
 
 </body>
 </html>

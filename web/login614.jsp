@@ -30,17 +30,18 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div id="a">
     <h1>登录界面</h1>
-    <form action="userindex614.jsp" method="post">
-        账号:<input type="text" name="id"/>
+    <form action="UserLoginServlet614" method="post">
+        账号:<input type="text" name="user_name"/>
         <br>
-        密码:<input type="password" name="password"/>
+        密码:<input type="password" name="user_pwd"/>
         <br>
 
         <input type="submit" value="login"/>
+        ${msg}
         没有账号？<a href ="register614.jsp">注册账号</a>
     </form>
 </div>
-<%@include file="pageguide510.jsp" %>
+<%@include file="pagefooter510.jsp" %>
 
 </body>
 </html>

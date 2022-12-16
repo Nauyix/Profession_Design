@@ -15,12 +15,12 @@ public class UserService614 {
         }
         uDao.insert(user);
         return true;
-
     }
     //登录
     public User510 login(String name,String pwd) throws SQLException {
         User510 user = null;
         user = uDao.login614(name, pwd);
+        System.out.println("In UserService"+user+"qwq "+name+" qwq "+pwd);
         return user;
     }
 }

@@ -56,20 +56,24 @@ public class UserDao510 {
     public boolean isUsernameExist614(String user_name) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql = "select * from pd_user where user_name = ?";
-        User510 user = runner.query(sql,new BeanHandler<User510>(User510.class),user_name);
+        User510 user=null;
+        try{
+            user = (User510)runner.query(sql,new BeanHandler<User510>(User510.class),new Object[]{user_name});
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         if(user == null){
             return false;
         }else{
             return true;
         }
-
-
     }
 
     public User510 login614(String name, String pwd) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql = "select * from pd_user where user_name = ? and user_pwd = ?";
-        User510 user = runner.query(sql,new BeanHandler<User510>(User510.class),name,pwd);
+        User510 user = (User510) runner.query(sql,new BeanHandler<User510>(User510.class),new Object[]{name,pwd});
+        System.out.println("In UserDao"+user+"qwq "+name+" qwq "+pwd);
         return user;
     }
 }

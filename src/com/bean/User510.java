@@ -11,7 +11,7 @@ public class User510 {
         this.user_name = user_name;
     }
 
-    public int  getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
@@ -49,7 +49,9 @@ public class User510 {
     public void setUser_type(int user_type) {
         this.user_type = user_type;
     }
-
+    public User510(){
+        super();
+    }
     private String user_name;
     private int user_id;
     private String user_pwd;

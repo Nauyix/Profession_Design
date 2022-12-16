@@ -32,25 +32,23 @@ public class UserAddServlet614 extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        try {
-            userDao.insert(user);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         UserService614 userService = new UserService614();
         try {
             if(userService.register(user)){
-                request.getSession().setAttribute("user",userDao.findAll());
+                System.out.println("1");
+                System.out.println("2");
                 request.setAttribute("msg","注册成功，请登录！");
+                System.out.println("3");
                 request.getRequestDispatcher("login614.jsp").forward(request,response);
             }else{
+                System.out.println("4");
+                System.out.println("5");
                 request.setAttribute("msg","用户名存在，请重新注册");
                 request.getRequestDispatcher("register614.jsp").forward(request,response);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
 
 
     }

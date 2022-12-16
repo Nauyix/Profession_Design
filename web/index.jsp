@@ -11,6 +11,6 @@
     <title>没有什么用的主页</title>
   </head>
   <body>
-  <a href="login614.jsp">点我！</a>
+  <%response.setHeader("Refresh", "5;URL=login614.jsp");%>
   </body>
 </html>

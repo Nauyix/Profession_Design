@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.bean.House510" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.dao.HouseDao510" %><%--
   Created by IntelliJ IDEA.
   User: lvdongting
   Date: 2022/12/14
@@ -20,6 +22,8 @@
 
     }
     <%
+    HouseDao510 hd=new HouseDao510();
+    List<House510> l=hd.findAll();
     String house_id = request.getSession().getAttribute("house_id").toString();
     String house_prov = request.getSession().getAttribute("house_prov").toString();
     String house_city = request.getSession().getAttribute("house_city").toString();

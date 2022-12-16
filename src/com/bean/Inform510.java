@@ -38,16 +38,20 @@ public class Inform510 {
         this.inform_text = inform_text;
     }
     private String inform_id,sender_id,receiver_id,inform_text;
-    private Date inform_time;
+
+    public void setInform_time(String inform_time) {
+        this.inform_time = inform_time;
+    }
+    private String inform_time;
     public String getInform_time() {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(inform_time);
     }
-    public void setInform_time(String inform_time) {//使用String以yyyy-MM-dd HH:mm:ss形式传入
-        SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        try {
-            this.inform_time = f.parse(inform_time);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void setInform_time(String inform_time) {//使用String以yyyy-MM-dd HH:mm:ss形式传入
+//        SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        try {
+//            this.inform_time = f.parse(inform_time);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
