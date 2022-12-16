@@ -57,8 +57,8 @@
 </style>
 <ul>
     <li><a href="houseindex614.jsp" class="bas">房源信息</a> </li>
-    <li><a href="wrong510.jsp" class="bas">合同信息</a> </li>
-    <li><a href="wrong510.jsp" class="bas">通知信息</a> </li>
+    <li><a href="contract505.jsp.jsp" class="bas">合同信息</a> </li>
+    <li><a href="acceptNotice505.jsp" class="bas">通知信息</a> </li>
     <li><a href="loan_calculator510.jsp" class="bas">贷款计算器</a> </li>
 
     <c:if test="${applicationScope.userlogin==0||applicationScope.userlogin==null}">
