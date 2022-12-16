@@ -26,9 +26,12 @@ public class UserAddServlet614 extends HttpServlet {
         String email = request.getParameter("email");
         String phonenumber = request.getParameter("phonenumber");
         int usertype = Integer.parseInt(request.getParameter("usertype")) ;
-
-
-        User510 user = new User510("nickname", "password", "phonenumber", "email", usertype);
+        User510 user = null;
+        try {
+            user = new User510((userDao.getSize()+1),nickname, password, phonenumber, email, usertype);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         try {
             userDao.insert(user);
         } catch (SQLException e) {

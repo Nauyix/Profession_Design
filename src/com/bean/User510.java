@@ -51,13 +51,14 @@ public class User510 {
     }
 
     private String user_name;
-    private String user_id;
+    private int user_id;
     private String user_pwd;
     private String user_tel;
     private String user_email;
     private int user_type;
 
-    public User510(String user_name, String user_pwd, String user_tel, String user_email, int user_type) {
+    public User510(int user_id,String user_name, String user_pwd, String user_tel, String user_email, int user_type) {
+        this.user_id = user_id;
         this.user_name = user_name;
         this.user_pwd = user_pwd;
         this.user_tel = user_tel;
