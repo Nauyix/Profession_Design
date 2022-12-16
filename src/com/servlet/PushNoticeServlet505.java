@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
  * @Description: ·¢ËÍÍ¨Öª
  * @Version: 1.0
  */
-@WebServlet(name="PushNoticeServelt",value="/PushNoticeServelt")
+@WebServlet(name="PushNoticeServelt505",value="/PushNoticeServelt505")
 public class PushNoticeServlet505 extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
