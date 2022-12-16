@@ -60,7 +60,7 @@ public class AlterContractServlet505 extends HttpServlet {
         Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
         try {
             boolean flag = dao505.update(contract505);
-            if(flag = true) System.out.println("更改成功");
+            if(flag = true) resp.sendRedirect("userindex614.jsp");
             else  resp.sendRedirect("contract505.jsp");//
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -50,6 +50,4 @@ public class Inform510 {
             e.printStackTrace();
         }
     }
-
-
 }

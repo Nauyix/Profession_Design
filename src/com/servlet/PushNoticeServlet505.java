@@ -35,7 +35,7 @@ public class PushNoticeServlet505 extends HttpServlet {
       String senderId=req.getParameter("sender_id");
       String receiverId=req.getParameter("receiver_id");
       String informText=req.getParameter("inform_text");
-      String informTime=inform505.getInform_time();
+      String informTime=req.getParameter("time");
       StringBuilder sb = new StringBuilder();
 
       sb.append(subStringID(senderId));
@@ -51,12 +51,11 @@ public class PushNoticeServlet505 extends HttpServlet {
       InformDao510 dao505 = new InformDao510();
       try {
          boolean flag = dao505.insert(inform505);
-         if(flag = true) System.out.println("·¢ËÍ³É¹¦");
-         else  resp.sendRedirect("/pushNotice505.jsp");//
+         if(flag = true) resp.sendRedirect("userindex614.jsp");
+         else  resp.sendRedirect("pushNotice505.jsp");//
       } catch (SQLException e) {
          throw new RuntimeException(e);
       }
-      resp.sendRedirect("/index");
    }
 
    private String subStringID(String stringID){

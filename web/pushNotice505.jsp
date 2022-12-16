@@ -34,7 +34,7 @@
 //    Date date = new Date();
 //    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //    String time = sdf.format(date);
-    //传数据库时间(毫秒)
+//    传数据库时间(毫秒)
     Timestamp timePush = new Timestamp(new java.util.Date().getTime());
 %>
 
@@ -47,7 +47,7 @@
         <tr><td>接收者ID:</td><td><input type="text" name="receiver_id" /></td></tr>
         <tr><td>通知内容:</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
         <tr><td>通知时间:</td><td>
-<%--            <%=time%>--%>
+<%--            <%=time%></td></tr>--%>
             <input name="time" value=<%=timePush%> id="search" /></td></tr>
         <tr><td colspan="2" align="center">
             <input type="submit" value="发送" name="push"/>
