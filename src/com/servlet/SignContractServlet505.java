@@ -49,7 +49,6 @@ public class SignContractServlet505 extends HttpServlet {
         double loanQuota=Double.parseDouble(req.getParameter("loan_quota"));
 
         StringBuilder sb = new StringBuilder();
-
 //        sb.append(date.getYear());//Á½Î»
 //        sb.append(date.getMonth());
 //        sb.append(date.getDay());

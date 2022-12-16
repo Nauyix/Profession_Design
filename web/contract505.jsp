@@ -1,5 +1,4 @@
 <%@ page import="com.bean.User510" %>
-<%@ page import="jdk.nashorn.internal.ir.Flags" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%--

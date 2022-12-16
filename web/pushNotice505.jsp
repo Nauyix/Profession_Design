@@ -38,7 +38,7 @@
     Timestamp timePush = new Timestamp(new java.util.Date().getTime());
 %>
 
-<form action="PushNoticeServlet" method="post" name="contract" >
+<form action="PushNoticeServlet505" method="post" name="contract" >
     <table class="tables">
         <tr><td colspan="2" align="center">
             <h1>发送通知</h1>

@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
  * @Description: 发送通知
  * @Version: 1.0
  */
-@WebServlet(name="PushNoticeServelt505",value="/PushNoticeServelt505")
+@WebServlet(name="PushNoticeServlet505",value="/PushNoticeServlet505")
 public class PushNoticeServlet505 extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -52,14 +52,11 @@ public class PushNoticeServlet505 extends HttpServlet {
       try {
          boolean flag = dao505.insert(inform505);
          if(flag = true) System.out.println("发送成功");
-         else  resp.sendRedirect("pushNotice505.jsp");//
+         else  resp.sendRedirect("/pushNotice505.jsp");//
       } catch (SQLException e) {
          throw new RuntimeException(e);
       }
-   }
-
-   public static void main(String[] args) {
-
+      resp.sendRedirect("/index");
    }
 
    private String subStringID(String stringID){

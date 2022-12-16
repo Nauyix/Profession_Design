@@ -6,7 +6,7 @@
   Time: 10:46
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
     <title>Title</title>
@@ -57,7 +57,7 @@
 </style>
 <ul>
     <li><a href="houseindex614.jsp" class="bas">房源信息</a> </li>
-    <li><a href="contract505.jsp.jsp" class="bas">合同信息</a> </li>
+    <li><a href="contract505.jsp" class="bas">合同信息</a> </li>
     <li><a href="acceptNotice505.jsp" class="bas">通知信息</a> </li>
     <li><a href="loan_calculator510.jsp" class="bas">贷款计算器</a> </li>
 
