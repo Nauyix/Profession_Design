@@ -59,7 +59,7 @@
     <input type="submit" value="重置">
   </form>
 </div>
-<%@include file="pageguide510.jsp" %>
+<%@include file="pagefooter510.jsp" %>
 
 </body>
 </html>

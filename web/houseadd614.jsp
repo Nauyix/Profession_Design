@@ -34,7 +34,8 @@
         <input type="reset" value="重 置"/>
 
     </form>
-<%@include file="pageguide510.jsp" %>
+<%@include file="pagefooter510.jsp" %>
+
 
 </body>
 </html>

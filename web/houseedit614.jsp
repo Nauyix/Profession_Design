@@ -34,7 +34,8 @@
 
 
 </form>
-<%@include file="pageguide510.jsp" %>
+<%@include file="pagefooter510.jsp" %>
+
 
 </body>
 </html>

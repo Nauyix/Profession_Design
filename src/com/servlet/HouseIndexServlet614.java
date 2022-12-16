@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/houseindex")
+@WebServlet("/houseindex614")
 public class HouseIndexServlet614 extends HttpServlet {
-    List<House510> HouseList ;
+    List<House510> HouseList;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
         HouseDao510 houseDao = new HouseDao510();
@@ -31,10 +31,13 @@ public class HouseIndexServlet614 extends HttpServlet {
         }
 
         session.setAttribute("HouseList", HouseList);
-        response.sendRedirect("houseindex.jsp");
+        response.sendRedirect("houseindex614.jsp");
 
     }
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
 }
+
