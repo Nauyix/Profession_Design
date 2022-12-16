@@ -28,8 +28,8 @@ public class AcceptNoticeServlet505 extends HttpServlet {
    private static String jdbcDriver = "com.mysql.jdbc.Driver";// mysql连接驱动,无需改
 
    public static String jdbcUrl = "jdbc:mysql://localhost:3306/?serverTimezone=GMT";
-   public static String jdbcUser = "root";//数据库用户名
-   public static String jdbcPwd = "root";//数据库密码
+   public static String jdbcUser = "ProDes";//数据库用户名
+   public static String jdbcPwd = "Pwd@502";//数据库密码
    private static Connection conn;
    public static Statement st;
 
