@@ -24,8 +24,8 @@
         价&nbsp&nbsp格：<input type="text" name="house_price"><br/>
         户&nbsp&nbsp型：<input type="text" name="house_type"><br/>
         年&nbsp&nbsp限：<input type="text" name="age"><br/>
-        类&nbsp&nbsp型：<input type="radio"  name="housetype"  value="sellnew">新房
-                       <input type="radio" name="housetype"  value="sellsecond">二手房<br/>
+        类&nbsp&nbsp型：<input type="radio"  name="sell_type"  value="sellnew">新房
+                       <input type="radio" name="sell_type"  value="sellsecond">二手房<br/>
         装修状态：<input type="radio" name="fitement" value="fitement1">毛坯
                 <input type="radio" name="fitement" value="fitement2">普通装修
                 <input type="radio" name="fitement" value=fitement3">精致装修
