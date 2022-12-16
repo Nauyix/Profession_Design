@@ -96,6 +96,10 @@ public class House510 {
     String house_city;
     String house_dist;
     String house_adds;
+
+    public House510() {
+    }
+
     double house_area;
     double house_price;
     String house_type;

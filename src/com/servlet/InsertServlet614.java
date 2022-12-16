@@ -15,6 +15,7 @@ import java.sql.SQLException;
 @WebServlet("/InsertServlet614")
 public class InsertServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
+    House510 house ;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -29,7 +30,6 @@ public class InsertServlet614 extends HttpServlet {
         Double house_area = Double.parseDouble(request.getParameter("house_area"));
         Double house_price = Double.parseDouble(request.getParameter("house_price"));
         Integer house_age = Integer.parseInt(request.getParameter("age"));
-        House510 house = null;
         try {
             house = new House510(hd.getsize()+1, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,house_status);
             houseDao.insert(house);
@@ -37,7 +37,8 @@ public class InsertServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect("/index");
+
+        response.sendRedirect("houseindex614.jsp");
 
     }
 }

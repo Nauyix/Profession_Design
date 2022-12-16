@@ -15,6 +15,7 @@ import java.util.List;
 
 @WebServlet("/houseindex")
 public class HouseIndexServlet614 extends HttpServlet {
+    List<House510> HouseList ;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,7 +23,7 @@ public class HouseIndexServlet614 extends HttpServlet {
         HouseDao510 houseDao = new HouseDao510();
         HttpSession session = request.getSession();
 
-        List<House510> HouseList = null;
+
         try {
             HouseList = houseDao.findAll();
         } catch (SQLException e) {
