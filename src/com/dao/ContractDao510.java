@@ -27,7 +27,7 @@ public class ContractDao510 {
     public Boolean insert(Contract510 c) throws SQLException{
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql="insert into pd_contract(con_id,house_id,mid_id,seller_id,buyer_id,house_price,house_pm,loan_quota,loan_type) values (?,?,?,?,?,?,?,?,?)";
-        int num=runner.update(sql,new Object[] {});
+        int num=runner.update(sql,new Object[] {c.getCon_id(),c.getHouse_id(),c.getmid_id(),c.getSeller_id(),c.getBuyer_id(),c.getHouse_price(),c.getHouse_pm(),c.getLoan_quota(),c.getLoan_type()});
         if (num > 0) {
             return true;
         }

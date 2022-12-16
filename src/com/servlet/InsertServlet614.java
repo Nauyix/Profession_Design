@@ -25,10 +25,10 @@ public class InsertServlet614 extends HttpServlet {
         String house_adds = request.getParameter("house_adds");
         Double house_area = Double.parseDouble(request.getParameter("house_area"));
         Double house_price = Double.parseDouble(request.getParameter("house_price"));
-        Integer house_age = Integer.parseInt(request.getParameter("house_age"));
+        Integer house_age = Integer.parseInt(request.getParameter("age"));
         House510 house = null;
         try {
-            house = new House510(hd.getsize()+1, "house_prov", "house_city", "house_dist", "house_adds", house_area, house_price, "house_type",house_age,"sell_type","house_status");
+            house = new House510(hd.getsize()+1, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,house_status);
             houseDao.insert(house);
         } catch (SQLException e) {
             throw new RuntimeException(e);
