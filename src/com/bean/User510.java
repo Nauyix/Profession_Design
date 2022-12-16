@@ -11,11 +11,11 @@ public class User510 {
         this.user_name = user_name;
     }
 
-    public String getUser_id() {
+    public int  getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 

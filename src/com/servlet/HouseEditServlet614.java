@@ -15,6 +15,7 @@ import java.sql.SQLException;
 @WebServlet("/houseedit")
 public class HouseEditServlet614 extends HttpServlet {
 
+
     private HouseDao510 houseDao = new HouseDao510();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

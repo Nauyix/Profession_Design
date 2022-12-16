@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet(value="/UserAddServlet614",name="UserAddServlet614")
+@WebServlet("/userindex")
 public class UserAddServlet614 extends HttpServlet {
     private UserDao510 userDao = new UserDao510();
 

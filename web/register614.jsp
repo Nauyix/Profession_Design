@@ -32,7 +32,7 @@
 <%--注册框 --%>
 <div id="a">
   <h1>注册账号</h1>
-  <form action="UserAddServlet614"  method="post">
+  <form action="/userindex"  method="post">
     用户名:
     <input type="text"
            name="nickname">
