@@ -22,7 +22,7 @@
 
     }
     <%
-    List<House510> houseList = (List<House510>) request.getSession().getAttribute("HouseList");
+    request.getSession().getAttribute("HouseList");
     %>
 </style>
 <body>
@@ -45,7 +45,7 @@
       </tr>
 <c:forEach items="${HouseList}" var="house"  varStatus="index">
       <tr>
-          <td>${house.house_id}</td>
+          <td ><a href="houseedit614.jsp">${house.house_id}</a></td>
           <td>${house.house_prov}</td>
           <td>${house.house_city}</td>
           <td>${house.house_dist}</td>

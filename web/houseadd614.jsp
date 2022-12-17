@@ -26,10 +26,10 @@
         年&nbsp&nbsp限：<input type="text" name="age"><br/>
         类&nbsp&nbsp型：<input type="radio"  name="sell_type"  value="sellnew">新房
                        <input type="radio" name="sell_type"  value="sellsecond">二手房<br/>
-        装修状态：<input type="radio" name="fitement" value="fitement1">毛坯
-                <input type="radio" name="fitement" value="fitement2">普通装修
-                <input type="radio" name="fitement" value=fitement3">精致装修
-                <input type="radio" name="fitement" value="fitement4">豪华装修<br/>
+        装修状态：<input type="radio" name="fitement" value="毛坯">毛坯
+                <input type="radio" name="fitement" value="普通装修">普通装修
+                <input type="radio" name="fitement" value="精致装修">精致装修
+                <input type="radio" name="fitement" value="豪华装修">豪华装修<br/>
         <input type="submit" value="添 加"/>
         <input type="reset" value="重 置"/>
 

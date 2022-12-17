@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet("/update")
+@WebServlet("/HouseUpdateServlet614")
 public class HouseUpdateServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
 
@@ -27,14 +27,16 @@ public class HouseUpdateServlet614 extends HttpServlet {
         double house_area = Double.parseDouble(request.getParameter("house_area"));
         double house_price = Double.parseDouble(request.getParameter("housej_price"));
         int house_age = Integer.parseInt(request.getParameter("house_age"));
+        String house_type = request.getParameter("house_type");
 
         try {
-            houseDao.update(new House510(1, "house_prov", "house_city", "house_dist", "house_adds", house_area, house_price, "house_type",house_age,"sell_type","house_status"));
+            houseDao.update(new House510(3, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,"sell_type","house_status"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect("/houseindex614");
+
+        response.sendRedirect("/Profession_Design_war_exploded/houseindex614");
     }
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
