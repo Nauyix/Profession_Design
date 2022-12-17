@@ -42,6 +42,7 @@
         <th>建造年</th>
         <th>类型</th>
         <th>装修状态</th>
+        <th>删除房屋</th>
       </tr>
 <c:forEach items="${HouseList}" var="house"  varStatus="index">
       <tr>
@@ -56,6 +57,7 @@
           <td>${house.house_age}</td>
           <td>${house.sell_type}</td>
           <td>${house.house_status}</td>
+          <td><a href="HouseDelServlet614">删除</a></td>
       </tr>
 </c:forEach>
 

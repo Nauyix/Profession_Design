@@ -11,13 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/delhouse")
+@WebServlet("/HouseDelServlet614")
 public class HouseDelServlet614 extends HttpServlet {
     private HouseDao510 houseDao = new HouseDao510();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idStr = request.getParameter("id");
+        String idStr = null;
+        try {
+            idStr = request.getParameter(houseDao.find(3));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         if(StringUtil614.isNotEmpty(idStr)){
             int id = Integer.parseInt(idStr);
             try {
@@ -25,7 +30,7 @@ public class HouseDelServlet614 extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            response.sendRedirect("");
+            response.sendRedirect("/Profession_Design_war_exploded/houseindex614");
 
         }
     }
