@@ -53,7 +53,7 @@ public class AlterContractServlet505 extends HttpServlet {
         sb.append(time.substring(5,7));
         sb.append(time.substring(8,10));
         sb.append(subStringID(sellerId));
-        sb.append(subStringID(buyerId));
+        sb.append(subStringID(midId));
         String conID = sb.toString();
 
         ContractDao510 dao505 = new ContractDao510();
@@ -61,7 +61,7 @@ public class AlterContractServlet505 extends HttpServlet {
         try {
             boolean flag = dao505.update(contract505);
             if(flag = true) resp.sendRedirect("userindex614.jsp");
-            else  resp.sendRedirect("contract505.jsp");//
+            else  resp.sendRedirect("alterContract505.jsp");//
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

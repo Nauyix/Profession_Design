@@ -18,6 +18,8 @@ public class UserLoginServlet614 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //接受请求
         request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
+
         String userName = request.getParameter("user_name");
         String userPwd = request.getParameter("user_pwd");
         System.out.println("Using LoginServlet");

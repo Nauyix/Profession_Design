@@ -20,6 +20,7 @@ public class UserAddServlet614 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
 
         String nickname = request.getParameter("nickname");
         String password = request.getParameter("password");

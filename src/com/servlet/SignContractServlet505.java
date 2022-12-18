@@ -56,7 +56,7 @@ public class SignContractServlet505 extends HttpServlet {
         sb.append(time.substring(5,7));
         sb.append(time.substring(8,10));
         sb.append(subStringID(sellerId));
-        sb.append(subStringID(buyerId));
+        sb.append(subStringID(midId));
 
         String conID = sb.toString();
         //合同ID= 年(后两位)月日+卖家ID后两位+买家ID后两位
@@ -66,7 +66,7 @@ public class SignContractServlet505 extends HttpServlet {
         try {
             boolean flag = dao505.insert(contract505);
             if(flag = true) resp.sendRedirect("userindex614.jsp");
-            else  resp.sendRedirect("contract505.jsp");//
+            else  resp.sendRedirect("signContract505.jsp");//
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

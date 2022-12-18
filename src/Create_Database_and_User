@@ -44,7 +44,7 @@ create table pd_inform(
     sender_id varchar(10),
     receiver_id  varchar(10),
     inform_text  varchar(30),
-    inform_time datetime,
+    inform_time varchar(18),
     primary key(inform_id)
 )charset=utf8;
 ALTER TABLE pd_inform ADD CONSTRAINT wj5 FOREIGN KEY (sender_id) REFERENCES pd_user (user_id);

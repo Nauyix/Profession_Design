@@ -19,7 +19,7 @@ public class HouseDelServlet614 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idStr = null;
         try {
-            idStr = request.getParameter(houseDao.find(3));
+            idStr = request.getParameter(houseDao.find(3).getHouse_id()+"");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

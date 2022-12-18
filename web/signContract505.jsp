@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>房屋合同</title>
+    <title>签署房屋合同</title>
 </head>
 <body>
 <%@include file="pageguide510.jsp" %>
@@ -54,7 +54,7 @@
         <tr><td>签约时间</td><td><%=time%></td></tr>
             <tr><td colspan="2" align="center">
                 <input type="submit" value="签约" name="sign"/>
-                <input type="submit" value="更改" name="alter"/>
+                <input type="button" onclick="javascript:window.location.href='alterContract505.jsp';" value="更改" />
                 <input type="reset" value="重填"/>
             </td></tr>
     </table>
