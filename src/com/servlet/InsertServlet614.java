@@ -37,7 +37,6 @@ public class InsertServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-
         response.sendRedirect("/Profession_Design_war_exploded/houseindex614");
 
     }

@@ -31,26 +31,27 @@ public class PushNoticeServlet505 extends HttpServlet {
 
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      String senderId=req.getParameter("sender_id");
-      String receiverId=req.getParameter("receiver_id");
-      String informText=req.getParameter("inform_text");
-      String informTime=req.getParameter("time");
+      String sender_id=req.getParameter("sender_id");
+      String receiver_id=req.getParameter("receiver_id");
+      String inform_text=req.getParameter("inform_text");
+      String inform_time=req.getParameter("inform_time");
       StringBuilder sb = new StringBuilder();
 
-      sb.append(subStringID(senderId));
-      sb.append(subStringID(receiverId));
-      String informId = sb.toString();
-
-      Inform510 inform505 = new Inform510(informId,senderId,receiverId,informText,informTime);
-      InformDao510 dao505 = new InformDao510();
+      sb.append(inform_time.substring(14,16));
+      sb.append(inform_time.substring(17,19));
+      sb.append(subStringID(sender_id));
+      sb.append(subStringID(receiver_id));
+      String inform_id = sb.toString();
 
       try {
-         boolean flag = dao505.insert(inform505);
-         if(flag = true) resp.sendRedirect("userindex614.jsp");
-         else  resp.sendRedirect("pushNotice505.jsp");//
+         InformDao510 dao505 = new InformDao510();
+         Inform510 inform505 = new Inform510(inform_id,sender_id,receiver_id,inform_text,inform_time);
+         dao505.insert(inform505);
       } catch (SQLException e) {
          throw new RuntimeException(e);
       }
+
+      resp.sendRedirect("/Profession_Design_war_exploded/acceptNotice505");
    }
 
    private String subStringID(String stringID){

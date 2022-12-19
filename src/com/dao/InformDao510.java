@@ -15,6 +15,12 @@ public class InformDao510 {
         List<Inform510> list=(List<Inform510>)runner.query(sql,new BeanListHandler<Inform510>(Inform510.class));
         return list;
     }
+    public List<Inform510> findAll(String receiverId) throws SQLException {
+        QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
+        String sql ="select * from pd_inform where receiver_id="+receiverId;
+        List<Inform510> list=(List<Inform510>)runner.query(sql,new BeanListHandler<Inform510>(Inform510.class));
+        return list;
+    }
     public Inform510 find(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql = "select * from pd_inform where id=?";

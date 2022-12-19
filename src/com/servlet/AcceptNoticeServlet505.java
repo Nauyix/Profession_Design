@@ -1,10 +1,11 @@
 package com.servlet;
 
+import com.bean.Inform510;
+import com.bean.User510;
+import com.dao.InformDao510;
+
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -23,27 +25,9 @@ import javax.servlet.http.HttpServletResponse;
  * @Description: 接受通知
  * @Version: 1.0
  */
-@WebServlet(name="AcceptNoticeServlet505",value="/AcceptNoticeServlet505")
+@WebServlet("/acceptNotice505")
 public class AcceptNoticeServlet505 extends HttpServlet {
-   private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";// mysql连接驱动,无需改
-
-   public static String jdbcUrl = "jdbc:mysql://localhost:3306/?serverTimezone=GMT";
-   public static String jdbcUser = "ProDes";//数据库用户名
-   public static String jdbcPwd = "Pwd@502";//数据库密码
-   private static Connection conn;
-   public static Statement st;
-
-   static {
-      try {
-         Class.forName(jdbcDriver);// 加载mysql驱动类
-         conn = DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPwd);
-         // 驱动利用驱动地址，数据库用户名，密码创建连接
-         st = conn.createStatement();
-      } catch (Exception e) {
-         e.printStackTrace();
-      }
-   }
-
+   List<Inform510> informList;
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       doPost(req, resp);
@@ -51,49 +35,22 @@ public class AcceptNoticeServlet505 extends HttpServlet {
 
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//      super.doPost(req, resp);
-      service(req, resp);
-   }
+      InformDao510 informDao505 = new InformDao510();
+      HttpSession session = req.getSession();
 
-   @Override
-   protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      List<Map> list =new ArrayList<Map>();//创建list集合用于存入map的键值对集合
 
-      String receiverId = req.getParameter("receiver_id");//接收jsp传来的数据
+//      try {
+//         informList = informDao505.findAll(receiverId);
+//      } catch (SQLException e) {
+//         throw new RuntimeException(e);
+//      }
 
       try {
-         String sql ="SELECT * FROM pd_inform"+
-                 "WHERE receiver_id="+receiverId;
-
-         ResultSet rs = st.executeQuery(sql);
-         //从数据库读取的内容，返回一个结果集。
-
-         while (rs.next()) {
-            String senderId = rs.getString("sender_id");
-            String informText = rs.getString("inform_text");
-            String informTime = rs.getString("inform_time");
-            //获取用循环接收数据库的表格信息
-
-            Map map = new HashMap();
-            map.put("senderId", senderId);
-            map.put("informText", informText);
-            map.put("informTime", informTime);
-            //存入map集合中
-
-            list.add(map);//将map集合对象存入list集合
-
-//            for (Map map_1 :list) {
-//               System.out.println(map_1);
-//            }//在打印台遍历出数据查看是否有错误
-
-         }
-      } catch (Exception e) {
-         e.printStackTrace();
+         informList = informDao505.findAll();
+      } catch (SQLException e) {
+         throw new RuntimeException(e);
       }
-
-      req.setAttribute("informList",list);//将list集合数据放入到request中共享
-      req.getRequestDispatcher("acceptNotice505.jsp").forward(req, resp);
-      //跳转到接受通知jsp页面
-
+      session.setAttribute("informList", informList);
+      resp.sendRedirect("acceptNotice505.jsp");
    }
 }

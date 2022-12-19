@@ -61,7 +61,6 @@
               <td><input type="submit" value="删除"></td>
               <input type="hidden" name="id" value=${house.house_id}>
           </form>
-
       </tr>
 </c:forEach>
 
