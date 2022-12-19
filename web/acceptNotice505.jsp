@@ -31,6 +31,7 @@
     </style>
 </head>
 <body>
+
 <div>
     <%@include file="pageguide510.jsp" %>
     <br/>
@@ -42,12 +43,12 @@
             <th>通知内容</th>
             <th>通知时间</th>
         </tr>
-        <c:forEach items="${informList}" var="inform" varStatus="index">
+        <c:forEach items="${informList}" var="pd_inform" varStatus="index">
             <!--varStatus类型：String   描述：循环的状态信息，可以取值index\count\first\last\current-->
             <tr>
-                <td>${inform.senderId}</td>
-                <td>${inform.informText}</td>
-                <td>${inform.informTime}</td>
+                <td>${pd_inform.senderId}</td>
+                <td>${pd_inform.informText}</td>
+                <td>${pd_inform.informTime}</td>
             </tr>
         </c:forEach>
     </table>

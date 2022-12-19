@@ -51,7 +51,8 @@ public class AcceptNoticeServlet505 extends HttpServlet {
 
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      super.doPost(req, resp);
+//      super.doPost(req, resp);
+      service(req, resp);
    }
 
    @Override
@@ -61,13 +62,13 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       String receiverId = req.getParameter("receiver_id");//接收jsp传来的数据
 
       try {
-         String sql ="SELECT pd_inform.`sender_id`,pd_inform.`inform_text`,pd_inform.`inform_time`\r\n"+
-                 "FROM pd_inform\r\n"+
+         String sql ="SELECT pd_inform.`sender_id`,pd_inform.`inform_text`,pd_inform.`inform_time`"+
+                 "FROM pd_inform"+
                  "WHERE pd_inform.receiver_id="+receiverId;
 
          ResultSet rs = st.executeQuery(sql);
          //从数据库读取的内容，返回一个结果集。
-         System.out.println("接受通知");
+
          while (rs.next()) {
             String senderId = rs.getString("sender_id");
             String informText = rs.getString("inform_text");
@@ -82,9 +83,9 @@ public class AcceptNoticeServlet505 extends HttpServlet {
 
             list.add(map);//将map集合对象存入list集合
 
-            for (Map map_1 :list) {
-               System.out.println(map_1);
-            }//在打印台遍历出数据查看是否有错误
+//            for (Map map_1 :list) {
+//               System.out.println(map_1);
+//            }//在打印台遍历出数据查看是否有错误
 
          }
       } catch (Exception e) {
@@ -92,7 +93,7 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       }
 
       req.setAttribute("informList",list);//将list集合数据放入到request中共享
-      req.getRequestDispatcher("/acceptNotice505.jsp").forward(req, resp);
+      req.getRequestDispatcher("acceptNotice505.jsp").forward(req, resp);
       //跳转到接受通知jsp页面
 
    }
