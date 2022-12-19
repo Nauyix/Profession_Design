@@ -23,7 +23,7 @@ public class InformDao510 {
     }
     public Boolean insert(Inform510 i) throws SQLException{
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="insert into pd_inform values (?,?,?,?,?,?)";
+        String sql="insert into pd_inform values (?,?,?,?,?)";
         int num=runner.update(sql,new Object[] {i.getInform_id(),i.getSender_id(),i.getReceiver_id(),i.getInform_text(),i.getInform_time()});
         if (num > 0) {
             return true;

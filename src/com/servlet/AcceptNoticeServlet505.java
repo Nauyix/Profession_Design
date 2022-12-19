@@ -59,7 +59,6 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       List<Map> list =new ArrayList<Map>();//创建list集合用于存入map的键值对集合
 
       String receiverId = req.getParameter("receiver_id");//接收jsp传来的数据
-      System.out.println(receiverId);
 
       try {
          String sql ="SELECT pd_inform.`sender_id`,pd_inform.`inform_text`,pd_inform.`inform_time`\r\n"+

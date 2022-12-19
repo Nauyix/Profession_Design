@@ -44,7 +44,8 @@ public class Inform510 {
     }
     private String inform_time;
     public String getInform_time() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(inform_time);
+//        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(inform_time);
+        return inform_time;
     }
 //    public void setInform_time(String inform_time) {//使用String以yyyy-MM-dd HH:mm:ss形式传入
 //        SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -54,4 +55,11 @@ public class Inform510 {
 //            e.printStackTrace();
 //        }
 //    }
+    public Inform510(String inform_id, String sender_id, String receiver_id, String inform_text, String inform_time) {
+        this.inform_id = inform_id;
+        this.sender_id = sender_id;
+        this.receiver_id = receiver_id;
+        this.inform_text = inform_text;
+        this.inform_time = inform_time;
+    }
 }

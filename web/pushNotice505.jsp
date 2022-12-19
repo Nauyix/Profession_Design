@@ -1,7 +1,5 @@
-
-<%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.util.Date" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -34,8 +32,7 @@
     Date date = new Date();
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String time = sdf.format(date);
-
-    String timepush=time.replace("-","");
+    String timepush=time.toString();
 %>
 
 <form action="PushNoticeServlet505" method="post" name="contract" >
@@ -48,8 +45,7 @@
         <tr><td>通知内容 :</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
         <tr>
             <td>通知时间 :</td>
-            <td><%=time%></td><%--显示时间--%>
-            <td><input type="text" style="color: white" name="time" value=<%=timepush%> id="search" /></td><%--上传--%>
+            <td><input type="text" style="color: black" name="time" value="<%out.print(timepush);%>" id="search" /></td><%--上传--%>
         </tr>
         <tr><td colspan="2" align="center">
             <input type="submit" value="发送" name="push"/>

@@ -31,7 +31,6 @@ public class PushNoticeServlet505 extends HttpServlet {
 
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      Inform510 inform505 = new Inform510();
       String senderId=req.getParameter("sender_id");
       String receiverId=req.getParameter("receiver_id");
       String informText=req.getParameter("inform_text");
@@ -42,13 +41,9 @@ public class PushNoticeServlet505 extends HttpServlet {
       sb.append(subStringID(receiverId));
       String informId = sb.toString();
 
-      inform505.setInform_text(informId);
-      inform505.setSender_id(senderId);
-      inform505.setReceiver_id(receiverId);
-      inform505.setInform_text(informText);
-      inform505.setInform_time(informTime);
-
+      Inform510 inform505 = new Inform510(informId,senderId,receiverId,informText,informTime);
       InformDao510 dao505 = new InformDao510();
+
       try {
          boolean flag = dao505.insert(inform505);
          if(flag = true) resp.sendRedirect("userindex614.jsp");
