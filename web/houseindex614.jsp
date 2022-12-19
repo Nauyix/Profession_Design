@@ -46,7 +46,7 @@
       </tr>
 <c:forEach items="${HouseList}" var="house"  varStatus="index">
       <tr>
-          <td ><a href="houseedit614.jsp">${house.house_id}</a></td>
+          <td ><a href="/houseedit614">${house.house_id}</a></td>
           <td>${house.house_prov}</td>
           <td>${house.house_city}</td>
           <td>${house.house_dist}</td>

@@ -18,7 +18,7 @@ public class HouseEditServlet614 extends HttpServlet {
 
     private HouseDao510 houseDao = new HouseDao510();
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String houseId = request.getParameter("house_id");
         if(StringUtil614.isNotEmpty(houseId)) {
             int houseid = Integer.parseInt(houseId);
@@ -35,7 +35,7 @@ public class HouseEditServlet614 extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);
     }
 }

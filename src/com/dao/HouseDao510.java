@@ -43,7 +43,7 @@ public class HouseDao510 {
     }
     public Boolean update(House510 h) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql="update pd_house set House_prov=?,House_city=?,House_dist=?,House_adds=?,House_area=?,House_price=?,House_type=?,House_age=?,Sell_type=?,House_status() where house_id=?";
+        String sql="update pd_house set House_prov=?,House_city=?,House_dist=?,House_adds=?,House_area=?,House_price=?,House_type=?,House_age=?,Sell_type=?,house_status=? where house_id=?";
         int num= runner.update(sql,new Object[]{h.getHouse_prov(),h.getHouse_city(),h.getHouse_dist(),h.getHouse_adds(),h.getHouse_area(),h.getHouse_price(),h.getHouse_type(),h.getHouse_age(),h.getSell_type(),h.getHouse_status(),h.getHouse_id()});
         if(num>0) return true;
         return false;

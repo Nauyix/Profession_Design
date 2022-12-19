@@ -20,6 +20,7 @@ public class HouseUpdateServlet614 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
+        int id = Integer.parseInt(request.getParameter("house_id"));
         String house_prov = request.getParameter("house_prov");
         String house_city = request.getParameter("house_city");
         String house_dist = request.getParameter("house_dist");
@@ -28,9 +29,11 @@ public class HouseUpdateServlet614 extends HttpServlet {
         double house_price = Double.parseDouble(request.getParameter("housej_price"));
         int house_age = Integer.parseInt(request.getParameter("house_age"));
         String house_type = request.getParameter("house_type");
+        String sell_type = request.getParameter("sell_type");
+        String fitement = request.getParameter("fitement");
 
         try {
-            houseDao.update(new House510(3, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,"sell_type","house_status"));
+            houseDao.update(new House510(id, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,fitement));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
