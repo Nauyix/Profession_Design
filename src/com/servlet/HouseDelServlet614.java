@@ -18,11 +18,7 @@ public class HouseDelServlet614 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idStr = null;
-        try {
-            idStr = request.getParameter(houseDao.find(3).getHouse_id()+"");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        idStr = request.getParameter("id");
         if(StringUtil614.isNotEmpty(idStr)){
             int id = Integer.parseInt(idStr);
             try {
@@ -35,6 +31,6 @@ public class HouseDelServlet614 extends HttpServlet {
         }
     }
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+        doPost(req, resp);
     }
 }

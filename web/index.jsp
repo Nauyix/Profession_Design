@@ -11,6 +11,8 @@
     <title>没有什么用的主页</title>
   </head>
   <body>
-  <%response.setHeader("Refresh", "5;URL=login614.jsp");%>
+  (╯‵□′)╯︵┻━┻
+  正在加载中
+  <%response.setHeader("Refresh", "2;URL=login614.jsp");%>
   </body>
 </html>

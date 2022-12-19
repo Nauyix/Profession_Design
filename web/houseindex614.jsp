@@ -57,7 +57,11 @@
           <td>${house.house_age}</td>
           <td>${house.sell_type}</td>
           <td>${house.house_status}</td>
-          <td><a href="HouseDelServlet614">删除</a></td>
+          <form action="HouseDelServlet614">
+              <td><input type="submit" value="删除"></td>
+              <input type="hidden" name="id" value=${house.house_id}>
+          </form>
+
       </tr>
 </c:forEach>
 
