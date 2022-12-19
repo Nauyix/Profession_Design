@@ -18,8 +18,13 @@ public class HouseDao510 {
     public int getsize() throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql="select * from pd_house";
+        int maxm=0;
         List<House510> list=(List<House510>)runner.query(sql,new BeanListHandler<House510>(House510.class));
-        return list.size();
+        for(int i=0;i<list.size(); i++)
+        {
+            maxm=maxm>list.get(i).getHouse_id()?maxm:list.get(i).getHouse_id();
+        }
+        return maxm;
     }
     public House510 find(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
