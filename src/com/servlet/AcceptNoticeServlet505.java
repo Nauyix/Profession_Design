@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name="AcceptNoticeServlet505",value="/AcceptNoticeServlet505")
 public class AcceptNoticeServlet505 extends HttpServlet {
-   private static String jdbcDriver = "com.mysql.jdbc.Driver";// mysql连接驱动,无需改
+   private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";// mysql连接驱动,无需改
 
    public static String jdbcUrl = "jdbc:mysql://localhost:3306/?serverTimezone=GMT";
    public static String jdbcUser = "ProDes";//数据库用户名
@@ -62,9 +62,8 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       String receiverId = req.getParameter("receiver_id");//接收jsp传来的数据
 
       try {
-         String sql ="SELECT pd_inform.`sender_id`,pd_inform.`inform_text`,pd_inform.`inform_time`"+
-                 "FROM pd_inform"+
-                 "WHERE pd_inform.receiver_id="+receiverId;
+         String sql ="SELECT * FROM pd_inform"+
+                 "WHERE receiver_id="+receiverId;
 
          ResultSet rs = st.executeQuery(sql);
          //从数据库读取的内容，返回一个结果集。
