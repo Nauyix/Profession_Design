@@ -30,12 +30,12 @@
 </style>
 
 <%
-//    //显示时间
-//    Date date = new Date();
-//    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//    String time = sdf.format(date);
-//    传数据库时间(毫秒)
-    Timestamp timePush = new Timestamp(new java.util.Date().getTime());
+    //显示时间
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String time = sdf.format(date);
+
+    String timepush=time.replace("-","");
 %>
 
 <form action="PushNoticeServlet505" method="post" name="contract" >
@@ -43,12 +43,14 @@
         <tr><td colspan="2" align="center">
             <h1>发送通知</h1>
         </td></tr>
-        <tr><td>发送者ID:</td><td><input type="text" name="sender_id" /></td></tr>
-        <tr><td>接收者ID:</td><td><input type="text" name="receiver_id" /></td></tr>
-        <tr><td>通知内容:</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
-        <tr><td>通知时间:</td><td>
-<%--            <%=time%></td></tr>--%>
-            <input name="time" value=<%=timePush%> id="search" /></td></tr>
+        <tr><td>发送者ID :</td><td><input type="text" name="sender_id" /></td></tr>
+        <tr><td>接收者ID :</td><td><input type="text" name="receiver_id" /></td></tr>
+        <tr><td>通知内容 :</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
+        <tr>
+            <td>通知时间 :</td>
+            <td><%=time%></td><%--显示时间--%>
+            <td><input type="text" style="color: white" name="time" value=<%=timepush%> id="search" /></td><%--上传--%>
+        </tr>
         <tr><td colspan="2" align="center">
             <input type="submit" value="发送" name="push"/>
             <input type="reset" value="重填"/>

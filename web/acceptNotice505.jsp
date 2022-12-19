@@ -17,27 +17,51 @@
         height:50%;
         margin: 0 auto;
     }
-</style>
+    .button {
+        background-color: 	#B0C4DE;
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    </style>
 </head>
 <body>
-<%@include file="pageguide510.jsp" %>
-<table>
-    <tr>
-        <th>发送者</th>
-        <th>通知内容</th>
-        <th>通知时间</th>
-    </tr>
-    <c:forEach items="${informList}" var="inform" varStatus="index">
-        <!--varStatus类型：String   描述：循环的状态信息，可以取值index\count\first\last\current-->
+<div>
+    <%@include file="pageguide510.jsp" %>
+    <br/>
+</div>
+<div>
+    <table>
         <tr>
-            <td>${inform.senderId}</td>
-            <td>${inform.informText}</td>
-            <td>${inform.informTime}</td>
+            <th>发送者</th>
+            <th>通知内容</th>
+            <th>通知时间</th>
         </tr>
-    </c:forEach>
-</table>
-
-<%@include file="pagefooter510.jsp" %>
+        <c:forEach items="${informList}" var="inform" varStatus="index">
+            <!--varStatus类型：String   描述：循环的状态信息，可以取值index\count\first\last\current-->
+            <tr>
+                <td>${inform.senderId}</td>
+                <td>${inform.informText}</td>
+                <td>${inform.informTime}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br/>
+</div>
+<div>
+    <br/>
+    <button class="button" value="发送通知" onclick="window.location.href='pushNotice505.jsp';">发送通知</button>
+    <br/>
+</div>
+<div>
+    <br/>
+    <%@include file="pagefooter510.jsp" %>
+</div>
 
 </body>
 </html>
