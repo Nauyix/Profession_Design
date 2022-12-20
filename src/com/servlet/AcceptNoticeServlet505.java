@@ -38,7 +38,7 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       InformDao510 informDao505 = new InformDao510();
       HttpSession session = req.getSession();
 
-      //获取接收者ID
+      //获取当前用户ID--接收者
       User510 user = (User510)req.getSession().getAttribute("user");
       String receiverId = user.getUser_id()+"";
 

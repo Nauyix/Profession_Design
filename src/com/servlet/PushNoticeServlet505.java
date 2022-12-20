@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.bean.Inform510;
+import com.bean.User510;
 import com.dao.ContractDao510;
 import com.dao.InformDao510;
 
@@ -9,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -43,15 +46,25 @@ public class PushNoticeServlet505 extends HttpServlet {
       sb.append(subStringID(receiver_id));
       String inform_id = sb.toString();
 
-      try {
-         InformDao510 dao505 = new InformDao510();
-         Inform510 inform505 = new Inform510(inform_id,sender_id,receiver_id,inform_text,inform_time);
-         dao505.insert(inform505);
-      } catch (SQLException e) {
-         throw new RuntimeException(e);
-      }
+      //获取当前用户ID--发送者
+      User510 user = (User510)req.getSession().getAttribute("user");
+      String senderId = user.getUser_id()+"";
 
-      resp.sendRedirect("/Profession_Design_war_exploded/acceptNotice505");
+      if(!senderId.equals(sender_id)){
+         Frame frame=new Frame();
+         frame.setAlwaysOnTop(true);//将弹窗放在最前面
+         JOptionPane.showMessageDialog((Component)frame, "发送者ID不符","提示",2);
+         resp.sendRedirect("pushNotice505.jsp");
+      }else{
+         try {
+            InformDao510 dao505 = new InformDao510();
+            Inform510 inform505 = new Inform510(inform_id,sender_id,receiver_id,inform_text,inform_time);
+            dao505.insert(inform505);
+         } catch (SQLException e) {
+            throw new RuntimeException(e);
+         }
+         resp.sendRedirect("/Profession_Design_war_exploded/acceptNotice505");
+      }
    }
 
    private String subStringID(String stringID){

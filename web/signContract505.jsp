@@ -34,7 +34,7 @@
 %>
 <form action="SignContractServlet505" method="post" name="contract">
     <table class="tables">
-            <tr><td colspan="2"><h1>售房合同</h1></td></tr>
+            <tr><td colspan="2"><h1>售房合同</h1><br/></td></tr>
             <tr><td>买家:</td><td><input type="text" name="buyer_id" placeholder="请输入买家ID"/></td></tr>
             <tr><td>卖家:</td><td><input type="text" name="seller_id" placeholder="请输入卖家ID"/></td></tr>
             <tr><td>中介:</td><td><input type="text" name="mid_id" placeholder="请输入中介ID"/></td></tr>
@@ -51,14 +51,14 @@
                 </td>
             </tr>
             <tr><td>贷款额度:</td><td><input type="text" name="loan_quota" placeholder="请输入贷款额度"/></td></tr>
-        <tr><td>签约时间</td><td><%=time%></td></tr>
-            <tr><td colspan="2" align="center">
+        <tr><td>签约时间</td><td><%=time%></td></tr><br/><br/>
+            <tr><td colspan="2" align="center"><br/>
                 <input type="submit" value="签约" name="sign"/>
                 <input type="button" onclick="javascript:window.location.href='alterContract505.jsp';" value="更改" />
                 <input type="reset" value="重填"/>
             </td></tr>
     </table>
-</form>
+</form><br/><br/>
 <%@include file="pagefooter510.jsp" %>
 </body>
 </html>
