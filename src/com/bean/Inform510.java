@@ -62,4 +62,7 @@ public class Inform510 {
         this.inform_text = inform_text;
         this.inform_time = inform_time;
     }
+
+    public Inform510() {
+    }
 }

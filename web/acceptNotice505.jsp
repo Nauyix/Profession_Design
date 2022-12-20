@@ -9,12 +9,13 @@
 <html>
 <head>
     <title>接受通知</title>
-    <style>
-    th,tr,td,tables{
+</head>
+<style type="text/css">
+    .tables{
         align: center;
         text-align: center;
-        width:30% ;
-        height:50%;
+        width:50% ;
+        height:10%;
         margin: 0 auto;
     }
     .button {
@@ -28,27 +29,28 @@
         font-size: 16px;
         border-radius: 12px;
     }
-    </style>
-</head>
+    <%
+    request.getSession().getAttribute("informList");
+    %>
+</style>
 <body>
-
 <div>
     <%@include file="pageguide510.jsp" %>
     <br/>
 </div>
 <div>
-    <table>
-        <tr>
+    <table class="tables" border="1" cellpadding="4" cellspacing="0">
+        <tr align="center">
             <th>发送者</th>
             <th>通知内容</th>
             <th>通知时间</th>
         </tr>
-        <c:forEach items="${informList}" var="pd_inform" varStatus="index">
+        <c:forEach items="${informList}" var="inform" varStatus="index">
             <!--varStatus类型：String   描述：循环的状态信息，可以取值index\count\first\last\current-->
             <tr>
-                <td>${pd_inform.senderId}</td>
-                <td>${pd_inform.informText}</td>
-                <td>${pd_inform.informTime}</td>
+                <td>${inform.sender_id}</td>
+                <td>${inform.inform_text}</td>
+                <td>${inform.inform_time}</td>
             </tr>
         </c:forEach>
     </table>

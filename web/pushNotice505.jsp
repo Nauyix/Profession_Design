@@ -45,7 +45,7 @@
         <tr><td>通知内容 :</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
         <tr>
             <td>通知时间 :</td>
-            <td><input type="text" style="color: black" name="time" value="<%out.print(timepush);%>" id="search" /></td><%--上传--%>
+            <td><input type="text" style="color: black" name="inform_time" value="<%out.print(timepush);%>" id="search" /></td><%--上传--%>
         </tr>
         <tr><td colspan="2" align="center">
             <input type="submit" value="发送" name="push"/>

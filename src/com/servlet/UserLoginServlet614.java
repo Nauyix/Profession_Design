@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 @WebServlet("/UserLoginServlet614")
 public class UserLoginServlet614 extends HttpServlet {
-    private UserService614 userService614 = new UserService614();
+    private final UserService614 userService614 = new UserService614();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //接受请求
@@ -24,7 +24,7 @@ public class UserLoginServlet614 extends HttpServlet {
         String userPwd = request.getParameter("user_pwd");
         System.out.println("Using LoginServlet");
         //调用业务层
-        User510 user = null;
+        User510 user;
         try {
 
             user = userService614.login(userName,userPwd);
@@ -35,6 +35,8 @@ public class UserLoginServlet614 extends HttpServlet {
             request.setAttribute("msg","用户名或密码错误，请重新登录！");
             request.getRequestDispatcher("login614.jsp").forward(request,response);
         }else{
+            this.getServletContext().setAttribute("userlogin",1);
+            this.getServletContext().setAttribute("username",user.getUser_name());
             request.getSession().setAttribute("user",user);
             request.getRequestDispatcher("userindex614.jsp").forward(request,response);
         }

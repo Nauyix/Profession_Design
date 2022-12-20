@@ -19,10 +19,8 @@ public class HouseIndexServlet614 extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         HouseDao510 houseDao = new HouseDao510();
         HttpSession session = request.getSession();
-
 
         try {
             HouseList = houseDao.findAll();
