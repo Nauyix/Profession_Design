@@ -24,11 +24,20 @@
     <%
     request.getSession().getAttribute("HouseList");
     %>
+    .inmid{
+        align: center;
+        text-align: center;
+        width:50% ;
+        height:50%;
+        margin: 0 auto;
+        border:0px;
+        solid:blue;
+    }
 </style>
 <body>
 <%@include file="pageguide510.jsp" %>
 
-    <p>房屋信息</p><a href="houseadd614.jsp" style="border:0px solid blue;margin-bottom:4px;">出售房屋</a>
+    <p2><a href="houseadd614.jsp" class="inmid">出售房屋</a></p2>
     <table class="tables" border="1" width="600" cellpadding="4" cellspacing="0">
       <tr align="center">
         <th>房屋ID</th>
