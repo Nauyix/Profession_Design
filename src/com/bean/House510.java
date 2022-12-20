@@ -105,7 +105,17 @@ public class House510 {
     String sell_type;
     String house_status;
 
-    public House510(int house_id, String house_prov, String house_city, String house_dist, String house_adds, double house_area, double house_price, String house_type, int house_age, String sell_type, String house_status) {
+    public String getSeller_id() {
+        return seller_id;
+    }
+
+    public void setSeller_id(String seller_id) {
+        this.seller_id = seller_id;
+    }
+
+    String seller_id;
+
+    public House510(int house_id, String house_prov, String house_city, String house_dist, String house_adds, double house_area, double house_price, String house_type, int house_age, String sell_type, String house_status,String seller_id) {
         this.house_id = house_id;
         this.house_prov = house_prov;
         this.house_city = house_city;
@@ -117,6 +127,7 @@ public class House510 {
         this.house_age = house_age;
         this.sell_type = sell_type;
         this.house_status = house_status;
+        this.seller_id=seller_id;
     }
 
 

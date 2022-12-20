@@ -20,13 +20,16 @@ public class HouseUpdateServlet614 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
+        System.out.println("123");
+        System.out.println("qwq"+request.getParameter("house_prov")+"qwq");
         int id = Integer.parseInt(request.getParameter("house_id"));
         String house_prov = request.getParameter("house_prov");
         String house_city = request.getParameter("house_city");
         String house_dist = request.getParameter("house_dist");
         String house_adds = request.getParameter("house_adds");
+
         double house_area = Double.parseDouble(request.getParameter("house_area"));
-        double house_price = Double.parseDouble(request.getParameter("housej_price"));
+        double house_price = Double.parseDouble(request.getParameter("house_price"));
         int house_age = Integer.parseInt(request.getParameter("house_age"));
         String house_type = request.getParameter("house_type");
         String sell_type = request.getParameter("sell_type");

@@ -49,3 +49,5 @@ create table pd_inform(
 )charset=utf8;
 ALTER TABLE pd_inform ADD CONSTRAINT wj5 FOREIGN KEY (sender_id) REFERENCES pd_user (user_id);
 ALTER TABLE pd_inform ADD CONSTRAINT wj6 FOREIGN KEY (receiver_id) REFERENCES pd_user (user_id);
+
+ALTER TABLE pd_house ADD CONSTRAINT wj7 FOREIGN KEY (seller_id) REFERENCES pd_user (user_id);

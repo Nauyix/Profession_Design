@@ -35,7 +35,8 @@
 
     <p>编辑房屋信息</p>
 
-    <form action="HouseUpdateServlet614" method="post"><input type="hidden",name="house_id",value="<%=id%>">
+    <form action="HouseUpdateServlet614" method="post">
+        <input type="hidden" name="house_id" value="<%=id%>">
     &nbsp省&nbsp&nbsp：<input type="text" name="house_prov" value="<%=prov%>"><br/>
     &nbsp市&nbsp&nbsp：<input type="text" name="house_city" value="<%=city%>" ><br/>
     &nbsp区&nbsp&nbsp：<input type="text" name="house_dist" value="<%=dist%>" ><br/>
