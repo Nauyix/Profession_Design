@@ -47,8 +47,8 @@
       <td><%=id%></td>
       <td><%=name%></td>
       <td><%=pwd%></td>
-      <td><%=email%></td>
       <td><%=phonenumber%></td>
+      <td><%=email%></td>
       <td><%=usertype%></td>
     </tr>
   </table>

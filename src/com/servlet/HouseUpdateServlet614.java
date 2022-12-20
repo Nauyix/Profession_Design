@@ -33,7 +33,7 @@ public class HouseUpdateServlet614 extends HttpServlet {
         String house_type = request.getParameter("house_type");
         String sell_type = request.getParameter("sell_type");
         String fitement = request.getParameter("fitement");
-        User510 us510 =(User510) this.getServletContext().getAttribute("user");
+        User510 us510 =(User510) request.getSession().getAttribute("user");
         String seller_id=String.valueOf(us510.getUser_id());
         try {
             houseDao.update(new House510(id, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,fitement,seller_id));

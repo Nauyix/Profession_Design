@@ -33,7 +33,6 @@ public class InsertServlet614 extends HttpServlet {
         Integer house_age = Integer.parseInt(request.getParameter("age"));
         User510 us510 =(User510) request.getServletContext().getAttribute("user");
         String sellerid=String.valueOf(us510.getUser_id());
-        System.out.println("-----------");
         try {
             house = new House510(hd.getsize()+1, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,house_status,sellerid);
             houseDao.insert(house);
