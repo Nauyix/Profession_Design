@@ -1,6 +1,7 @@
 package com.bean;
 
 public class House510 {
+    User510 user;
     int  house_id;
     String house_prov;
 
@@ -131,5 +132,6 @@ public class House510 {
     }
 
 
-
 }
+
+

@@ -35,6 +35,7 @@ public class UserLoginServlet614 extends HttpServlet {
             request.setAttribute("msg","用户名或密码错误，请重新登录！");
             request.getRequestDispatcher("login614.jsp").forward(request,response);
         }else{
+            request.getServletContext().setAttribute("user",user);
             this.getServletContext().setAttribute("userlogin",1);
             this.getServletContext().setAttribute("username",user.getUser_name());
             request.getSession().setAttribute("user",user);

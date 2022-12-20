@@ -19,16 +19,14 @@
         width:50% ;
         height:50%;
         margin: 0 auto;
-
     }
-    <%
-    request.getSession().getAttribute("HouseList");
-    %>
 </style>
 <body>
 <%@include file="pageguide510.jsp" %>
 
-    <p>房屋信息</p><a href="houseadd614.jsp" style="border:0px solid blue;margin-bottom:4px;">出售房屋</a>
+    <p>房屋信息</p>
+    <a href="HouseIndexServlet614_" style="border:0px solid blue;margin-bottom:4px;">查询本人的售卖房屋</a><br/>
+    <a href="houseadd614.jsp" style="border:0px solid blue;margin-bottom:4px;">出售房屋</a>
     <table class="tables" border="1" width="600" cellpadding="4" cellspacing="0">
       <tr align="center">
         <th>房屋ID</th>
@@ -42,17 +40,12 @@
         <th>建造年</th>
         <th>类型</th>
         <th>装修状态</th>
-        <th>删除房屋</th>
       </tr>
-<c:forEach items="${HouseList}" var="house"  varStatus="index">
+<c:forEach items="${HouseList0}" var="house"  varStatus="index">
       <tr>
 
-          <td>
-              <a href='/Profession_Design_war_exploded/houseedit614?id=${house.house_id}'>${house.house_id}</a>
-          </td>
-
+          <td>${house.house_id}</td>
           <td>${house.house_prov}</td>
-
           <td>${house.house_city}</td>
           <td>${house.house_dist}</td>
           <td>${house.house_adds}</td>
@@ -62,10 +55,6 @@
           <td>${house.house_age}</td>
           <td>${house.sell_type}</td>
           <td>${house.house_status}</td>
-          <form action="HouseDelServlet614">
-              <td><input type="submit" value="删除"></td>
-              <input type="hidden" name="id" value=${house.house_id}>
-          </form>
       </tr>
 </c:forEach>
 

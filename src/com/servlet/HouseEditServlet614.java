@@ -23,9 +23,7 @@ public class HouseEditServlet614 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String houseId = request.getParameter("id");
-        System.out.println(houseId);
         if(StringUtil614.isNotEmpty(houseId)) {
-            System.out.println(houseId);
 
             int houseid = Integer.parseInt(houseId);
 
@@ -35,7 +33,6 @@ public class HouseEditServlet614 extends HttpServlet {
                 throw new RuntimeException(e);
             }
 
-            System.out.println(houseId);
 
             request.getSession().setAttribute("house", house);
             response.sendRedirect("houseedit614.jsp");

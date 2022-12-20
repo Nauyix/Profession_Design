@@ -15,6 +15,13 @@ public class HouseDao510 {
         List<House510> list=(List<House510>)runner.query(sql,new BeanListHandler<House510>(House510.class));
         return list;
     }
+    public List<House510> findAll(String sellerid) throws SQLException {
+        QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
+        String sql="select * from pd_house where seller_id=?";
+        List<House510> list=(List<House510>)runner.query(sql,new BeanListHandler<House510>(House510.class),new Object[]{sellerid});
+        return list;
+    }
+
     public int getsize() throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
         String sql="select * from pd_house";
