@@ -22,7 +22,17 @@
     height:50%;
     margin: 0 auto;
   }
-
+  .td {
+    background-color: 	#B0C4DE;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+  }
 </style>
 <%
   //显示时间
@@ -54,8 +64,8 @@
     <br/>
     <tr><td colspan="2" align="center">
       <br/>
-      <input type="submit" value="更改" name="alter"/>
-      <input type="reset" value="重填"/>
+      <input class="td" type="submit" value="更改" name="alter"/>
+      <input class="td" type="reset" value="重填"/>
     </td></tr>
   </table>
 </form>

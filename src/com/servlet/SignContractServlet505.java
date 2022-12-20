@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -61,17 +63,22 @@ public class SignContractServlet505 extends HttpServlet {
         String conID = sb.toString();
         //合同ID= 年(后两位)月日+卖家ID后两位+买家ID后两位
 
-        ContractDao510 dao505 = new ContractDao510();
-        Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
+        Frame frame=new Frame();
+        frame.setAlwaysOnTop(true);//将弹窗放在最前面
+
         try {
-            boolean flag = dao505.insert(contract505);
-            if(flag = true) resp.sendRedirect("userindex614.jsp");
-            else  resp.sendRedirect("signContract505.jsp");//
+            ContractDao510 dao505 = new ContractDao510();
+            Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
+            if(dao505.insert(contract505)){
+                JOptionPane.showMessageDialog((Component)frame, "添加成功","提示",2);
+                resp.sendRedirect("userindex614.jsp");
+            }
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog((Component)frame, "添加失败","提示",2);
+            resp.sendRedirect("signContract505.jsp");
             throw new RuntimeException(e);
         }
     }
-
 
     private String subStringID(String stringID){
         while (stringID.length()<=2){

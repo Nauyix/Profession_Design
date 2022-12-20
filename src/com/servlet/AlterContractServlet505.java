@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -56,13 +58,19 @@ public class AlterContractServlet505 extends HttpServlet {
         sb.append(subStringID(midId));
         String conID = sb.toString();
 
-        ContractDao510 dao505 = new ContractDao510();
-        Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
+        Frame frame=new Frame();
+        frame.setAlwaysOnTop(true);//将弹窗放在最前面
+
         try {
-            boolean flag = dao505.update(contract505);
-            if(flag = true) resp.sendRedirect("userindex614.jsp");
-            else  resp.sendRedirect("alterContract505.jsp");//
+            ContractDao510 dao505 = new ContractDao510();
+            Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
+            if(dao505.update(contract505)){
+                JOptionPane.showMessageDialog((Component)frame, "更改成功","提示",2);
+                resp.sendRedirect("userindex614.jsp");
+            }
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog((Component)frame, "更改失败","提示",2);
+            resp.sendRedirect("alterContract505.jsp");
             throw new RuntimeException(e);
         }
     }
