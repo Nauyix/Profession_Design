@@ -70,7 +70,6 @@
   </table>
 </form>
 <br/>
-<br/>
 <%@include file="pagefooter510.jsp" %>
 </body>
 </html>

@@ -68,7 +68,7 @@
                 <input class="td" type="reset" value="重填"/>
             </td></tr>
     </table>
-</form><br/><br/>
+</form><br/>
 <%@include file="pagefooter510.jsp" %>
 </body>
 </html>
