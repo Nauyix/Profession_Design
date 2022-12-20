@@ -28,7 +28,7 @@ public class HouseDao510 {
     }
     public House510 find(int id) throws SQLException {
         QueryRunner runner = new QueryRunner(C3p0Utils510.getDataSource());
-        String sql = "select * from pd_house where id=?";
+        String sql = "select * from pd_house where house_id=?";
         House510 h = (House510) runner.query(sql,new BeanHandler<House510>(House510.class),new Object[]{id});
         return h;
     }

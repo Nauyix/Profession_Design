@@ -41,7 +41,7 @@ public class HouseUpdateServlet614 extends HttpServlet {
 
         response.sendRedirect("/Profession_Design_war_exploded/houseindex614");
     }
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
 }

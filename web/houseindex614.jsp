@@ -46,8 +46,13 @@
       </tr>
 <c:forEach items="${HouseList}" var="house"  varStatus="index">
       <tr>
-          <td ><a href="/houseedit614">${house.house_id}</a></td>
+
+          <td>
+              <a href='/Profession_Design_war_exploded/houseedit614?id=${house.house_id}'>${house.house_id}</a>
+          </td>
+
           <td>${house.house_prov}</td>
+
           <td>${house.house_city}</td>
           <td>${house.house_dist}</td>
           <td>${house.house_adds}</td>
