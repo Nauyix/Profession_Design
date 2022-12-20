@@ -13,6 +13,6 @@
   <body>
   (╯‵□′)╯︵┻━┻
   正在加载中
-  <%response.setHeader("Refresh", "2;URL=login614.jsp");%>
+  <%response.setHeader("Refresh", "1;URL=login614.jsp");%>
   </body>
 </html>

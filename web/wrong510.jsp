@@ -11,7 +11,7 @@
     <title>Oops</title>
 </head>
 <body>
-It seems something went wrong:-)
-<a href="loan_calculator510.jsp">click here</a>
+输入信息有误，请重新输入:-)
+<a href="houseindex614.jsp">点我点我</a>
 </body>
 </html>

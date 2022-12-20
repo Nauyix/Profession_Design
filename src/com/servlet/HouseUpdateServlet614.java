@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.bean.House510;
+import com.bean.User510;
 import com.dao.HouseDao510;
 
 import javax.servlet.ServletException;
@@ -20,8 +21,6 @@ public class HouseUpdateServlet614 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        System.out.println("123");
-        System.out.println("qwq"+request.getParameter("house_prov")+"qwq");
         int id = Integer.parseInt(request.getParameter("house_id"));
         String house_prov = request.getParameter("house_prov");
         String house_city = request.getParameter("house_city");
@@ -34,9 +33,10 @@ public class HouseUpdateServlet614 extends HttpServlet {
         String house_type = request.getParameter("house_type");
         String sell_type = request.getParameter("sell_type");
         String fitement = request.getParameter("fitement");
-
+        User510 us510 =(User510) this.getServletContext().getAttribute("user");
+        String seller_id=String.valueOf(us510.getUser_id());
         try {
-            houseDao.update(new House510(id, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,fitement));
+            houseDao.update(new House510(id, house_prov, house_city, house_dist, house_adds, house_area, house_price, house_type,house_age,sell_type,fitement,seller_id));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
