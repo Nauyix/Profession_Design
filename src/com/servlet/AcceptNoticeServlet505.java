@@ -38,18 +38,16 @@ public class AcceptNoticeServlet505 extends HttpServlet {
       InformDao510 informDao505 = new InformDao510();
       HttpSession session = req.getSession();
 
-
-//      try {
-//         informList = informDao505.findAll(receiverId);
-//      } catch (SQLException e) {
-//         throw new RuntimeException(e);
-//      }
+      //获取当前用户ID--接收者
+      User510 user = (User510)req.getSession().getAttribute("user");
+      String receiverId = user.getUser_id()+"";
 
       try {
-         informList = informDao505.findAll();
+         informList = informDao505.findAll(receiverId);
       } catch (SQLException e) {
          throw new RuntimeException(e);
       }
+
       session.setAttribute("informList", informList);
       resp.sendRedirect("acceptNotice505.jsp");
    }

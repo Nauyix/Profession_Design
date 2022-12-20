@@ -43,20 +43,20 @@
         <tr align="center">
             <th>发送者</th>
             <th>通知内容</th>
-            <th>通知时间</th>
+            <th >通知时间</th>
         </tr>
         <c:forEach items="${informList}" var="inform" varStatus="index">
             <!--varStatus类型：String   描述：循环的状态信息，可以取值index\count\first\last\current-->
             <tr>
-                <td>${inform.sender_id}</td>
+                <td width="20%">${inform.sender_id}</td>
                 <td>${inform.inform_text}</td>
-                <td>${inform.inform_time}</td>
+                <td width="30%">${inform.inform_time}</td>
             </tr>
         </c:forEach>
     </table>
     <br/>
 </div>
-<div>
+<div align="center">
     <br/>
     <button class="button" value="发送通知" onclick="window.location.href='pushNotice505.jsp';">发送通知</button>
     <br/>
