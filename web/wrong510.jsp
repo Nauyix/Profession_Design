@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: stz20
@@ -12,6 +13,25 @@
 </head>
 <body>
 输入信息有误，请重新输入:-)
-<a href="houseindex614.jsp">点我点我</a>
+<c:if test="${price_wrong==1}">
+    <br>发生模块：贷款计算器
+    <br>错误信息：贷款金额输入有误，金额应大于0元，小于1亿元
+</c:if>
+<c:if test="${loan_null==1}">
+    <br>发生模块：贷款计算器
+    <br>错误信息：关键信息缺失，请检查表单输入是否完整
+</c:if>
+<c:if test="${year_wrong==1}">
+    <br>发生模块：贷款计算器
+    <br>错误信息：贷款年限输入有误，年限应大于0年，小于60年
+</c:if>
+<c:if test="${first_wrong==1}">
+    <br>发生模块：贷款计算器
+    <br>错误信息：首付选择有误，合法首付：1成-9成（包含1成与9成）
+</c:if>
+<%
+    String url=request.getHeader("Referer");
+%>
+<a href=<%=url%>><br>点我点我</a>
 </body>
 </html>

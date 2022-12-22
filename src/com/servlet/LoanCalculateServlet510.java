@@ -25,17 +25,39 @@ public class LoanCalculateServlet510 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         double price;
-        price=Double.parseDouble(req.getParameter("price"));
         int first,year;
-        first=Integer.parseInt(req.getParameter("first"));
-        year=Integer.parseInt(req.getParameter("limit"));
-        String type=req.getParameter("type");
-        String proj=req.getParameter("proj");
+        String price1 = req.getParameter("price");//贷款金额
+        String first1 = req.getParameter("first");//首付比例
+        String limits = req.getParameter("limit");//贷款年限
+        String type=req.getParameter("type");//贷款类型（公积金/商业）
+        String proj=req.getParameter("proj");//计划（等额本金/等额本息）
+        if(limits == null||first1==null||price1 == null){
+            req.getSession().setAttribute("loan_null",1);
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        price=Double.parseDouble(price1);
+        first=Integer.parseInt(first1);
+        year=Integer.parseInt(limits);
         price=price*(10-first)*0.1;
         year*=12;
         List l=new ArrayList<Double>();
         double ll=1;
-        if(type.equals("business")) ll=0.049;
+        if(price<=0||price>=100000000)
+        {
+            req.getSession().setAttribute("price_wrong",1);
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        if(year<=0||year>=60){
+            Cookie cookie = new Cookie("year_wrong","1");
+            resp.addCookie(cookie);
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        if(first>=10||first<=0){
+            Cookie cookie = new Cookie("first_wrong","1");
+            resp.addCookie(cookie);
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        if(type.equals("business")) ll=0.049;//利率
         else if(type.equals("provident")) ll=0.0325;
         req.getSession().setAttribute("price",String.valueOf(price));
         req.getSession().setAttribute("time",String.valueOf(year));
