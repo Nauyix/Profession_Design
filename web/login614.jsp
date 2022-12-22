@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.net.URLDecoder" %><%--
   Created by IntelliJ IDEA.
   User: lvdongting
   Date: 2022/12/13
@@ -36,9 +37,21 @@ HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         密码:<input type="password" name="user_pwd"/>
         <br>
 
-        <input type="submit" value="login"/>
-        ${msg}
-        没有账号？<a href ="register614.jsp">注册账号</a>
+        <input type="submit" value="登录"/>
+        <%
+            Object s=request.getAttribute("msg");
+            String s1;
+            if(s==null)
+            {
+                s1="";
+            }
+            else {
+                s1=s.toString();
+                if(s1.equals("wrong")) s1="用户名或密码错误，请重新输入";
+            }
+        %>
+        <%=s1%>
+        <br>没有账号？<a href ="register614.jsp">注册账号</a>
     </form>
 </div>
 <%@include file="pagefooter510.jsp" %>

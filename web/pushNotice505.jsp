@@ -40,7 +40,7 @@
         <tr><td colspan="2" align="center">
             <h1>发送通知</h1>
         </td></tr>
-        <tr><td>发送者ID :</td><td><input type="text" name="sender_id" /></td></tr>
+<%--        <tr><td>发送者ID :</td><td><input type="text" name="sender_id" /></td></tr>--%>
         <tr><td>接收者ID :</td><td><input type="text" name="receiver_id" /></td></tr>
         <tr><td>通知内容 :</td><td><textarea name="inform_text" cols="20" rows="5"></textarea></td></tr>
         <tr>
