@@ -49,7 +49,17 @@
       <td><%=pwd%></td>
       <td><%=phonenumber%></td>
       <td><%=email%></td>
-      <td><%=usertype%></td>
+      <td>
+        <c:if test="${user.getUser_type()==0}">
+          买家
+        </c:if>
+        <c:if test="${user.getUser_type()==1}">
+          卖家
+        </c:if>
+        <c:if test="${user.getUser_type()==2}">
+          中介
+        </c:if>
+      </td>
     </tr>
   </table>
 <%@include file="pagefooter510.jsp" %>
