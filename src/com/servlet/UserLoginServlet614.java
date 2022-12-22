@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.sql.SQLException;
 
 @WebServlet("/UserLoginServlet614")
@@ -21,7 +19,6 @@ public class UserLoginServlet614 extends HttpServlet {
         //接受请求
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
-        response.setCharacterEncoding("UTF-8");
 
         String userName = request.getParameter("user_name");
         String userPwd = request.getParameter("user_pwd");
@@ -35,7 +32,7 @@ public class UserLoginServlet614 extends HttpServlet {
             throw new RuntimeException(e);
         }
         if(user  == null){
-            request.setAttribute("msg", "wrong");
+            request.setAttribute("msg","用户名或密码错误，请重新登录！");
             request.getRequestDispatcher("login614.jsp").forward(request,response);
         }else{
             request.getServletContext().setAttribute("user",user);
