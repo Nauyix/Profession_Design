@@ -24,6 +24,10 @@ public class LoanCalculateServlet510 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().removeAttribute("loan_null");
+        req.getSession().removeAttribute("price_wrong");
+        req.getSession().removeAttribute("year_wrong");
+        req.getSession().removeAttribute("first_wrong");
         double price;
         int first,year;
         String price1 = req.getParameter("price");//贷款金额
@@ -31,10 +35,17 @@ public class LoanCalculateServlet510 extends HttpServlet {
         String limits = req.getParameter("limit");//贷款年限
         String type=req.getParameter("type");//贷款类型（公积金/商业）
         String proj=req.getParameter("proj");//计划（等额本金/等额本息）
-        if(limits == null||first1==null||price1 == null){
+        if(limits == null||first1==null||price1 == null||type==null||proj==null){
             req.getSession().setAttribute("loan_null",1);
+            System.out.println("null1");
             req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
         }
+        if(limits.isEmpty()||first1.isEmpty()||price1.isEmpty()||type.isEmpty()||proj.isEmpty()){
+            req.getSession().setAttribute("loan_null",1);
+            System.out.println("Empty1");
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        System.out.println(price1+"<-price1");
         price=Double.parseDouble(price1);
         first=Integer.parseInt(first1);
         year=Integer.parseInt(limits);
@@ -45,16 +56,18 @@ public class LoanCalculateServlet510 extends HttpServlet {
         if(price<=0||price>=100000000)
         {
             req.getSession().setAttribute("price_wrong",1);
+            System.out.println("price1");
             req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
         }
-        if(year<=0||year>=60){
-            Cookie cookie = new Cookie("year_wrong","1");
-            resp.addCookie(cookie);
+        if(year<=0||year>=7200){
+            req.getSession().setAttribute("year_wrong",1);
+            System.out.println("year1"+year);
             req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
         }
         if(first>=10||first<=0){
             Cookie cookie = new Cookie("first_wrong","1");
             resp.addCookie(cookie);
+            System.out.println("first1");
             req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
         }
         if(type.equals("business")) ll=0.049;//利率
@@ -78,6 +91,7 @@ public class LoanCalculateServlet510 extends HttpServlet {
             }
         }
         else{//something went wrong?
+            System.out.println("???");
             resp.sendRedirect("Wrong510.jsp");
         }
         System.out.println("Servlet正在运行"+year+" "+price+" qwq "+l.size());

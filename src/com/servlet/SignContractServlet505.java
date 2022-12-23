@@ -50,6 +50,22 @@ public class SignContractServlet505 extends HttpServlet {
         String loanType=req.getParameter("loan_type");
         double loanQuota=Double.parseDouble(req.getParameter("loan_quota"));
 
+        if(buyerId == null||sellerId==null||midId == null||houseId==null||housePrice==0||housePm == null){
+            req.getSession().setAttribute("signC_null",1);
+            System.out.println("null1");
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
+        if(buyerId.isEmpty()||sellerId.isEmpty()||midId.isEmpty()||houseId.isEmpty()||housePm.isEmpty()) {
+            req.getSession().setAttribute("signC_null", 1);
+            System.out.println("Empty1");
+            req.getRequestDispatcher("wrong510.jsp").forward(req, resp);
+        }
+        if(housePrice<=0||housePrice>=100000000)
+        {
+            req.getSession().setAttribute("signPrice_wrong",1);
+            System.out.println("housePrice1");
+            req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+        }
         StringBuilder sb = new StringBuilder();
 //        sb.append(date.getYear());//两位
 //        sb.append(date.getMonth());
@@ -70,11 +86,11 @@ public class SignContractServlet505 extends HttpServlet {
             ContractDao510 dao505 = new ContractDao510();
             Contract510 contract505 = new Contract510(conID,houseId,midId,sellerId,buyerId,housePrice,housePm,loanQuota,loanType);
             if(dao505.insert(contract505)){
-                JOptionPane.showMessageDialog((Component)frame, "添加成功","提示",2);
+                JOptionPane.showMessageDialog((Component)frame, "签署成功","提示",2);
                 resp.sendRedirect("userindex614.jsp");
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog((Component)frame, "添加失败","提示",2);
+            JOptionPane.showMessageDialog((Component)frame, "签署失败","提示",2);
             resp.sendRedirect("signContract505.jsp");
             throw new RuntimeException(e);
         }
