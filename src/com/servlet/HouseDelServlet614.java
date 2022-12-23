@@ -26,7 +26,7 @@ public class HouseDelServlet614 extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            response.sendRedirect("/Profession_Design_war_exploded/houseindex614_");
+            response.sendRedirect("/Profession_Design_war_exploded/HouseIndexServlet614_");
 
         }
     }
