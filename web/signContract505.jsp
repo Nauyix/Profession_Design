@@ -63,7 +63,7 @@
             <tr><td>贷款额度:</td><td><input type="text" name="loan_quota" placeholder="请输入贷款额度"/></td></tr>
         <tr><td>签约时间</td><td><%=time%></td></tr><br/><br/>
             <tr><td colspan="2" align="center"><br/>
-                <input class="td" type="submit" value="签约" name="sign"/>
+                <input class="td" type="submit" value="签署" name="sign"/>
                 <input class="td" type="button" onclick="javascript:window.location.href='alterContract505.jsp';" value="更改" />
                 <input class="td" type="reset" value="重填"/>
             </td></tr>

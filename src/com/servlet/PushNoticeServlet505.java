@@ -43,6 +43,18 @@ public class PushNoticeServlet505 extends HttpServlet {
       String receiver_id=req.getParameter("receiver_id");
       String inform_text=req.getParameter("inform_text");
       String inform_time=req.getParameter("inform_time");
+
+      if(receiver_id == null||inform_text==null||inform_time == null){
+         req.getSession().setAttribute("pushN_null",1);
+         System.out.println("null1");
+         req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+      }
+      if(receiver_id.isEmpty()||inform_text.isEmpty()||inform_time.isEmpty()){
+         req.getSession().setAttribute("pushN__null",1);
+         System.out.println("Empty1");
+         req.getRequestDispatcher("wrong510.jsp").forward(req,resp);
+      }
+
       StringBuilder sb = new StringBuilder();
 
       sb.append(inform_time.substring(14,16));
